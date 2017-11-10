@@ -20,6 +20,9 @@ Clone project to your computer.
 $ git init
 $ git clone https://github.com/GeorgePuisha/store-grabber.git
 ```
+### Prerequisites
+
+To start with Store Grabber, you should have [Node](https://nodejs.org/en/download/package-manager/) installed. It already has [npm](https://github.com/npm/npm), so you can forward to the next step.
 
 ### Installing
 
@@ -29,21 +32,20 @@ Install all dependencies of both client & server.
 $ npm install
 ```
 
-To run server & client concurrently on localhost type 'npm start' in '/store-grabber/store-grabber/'.
+To run server & client concurrently on localhost type `npm start` in `/store-grabber/store-grabber/`.
 
 ```
 $ npm start
 ```
 
-Server works on 'http://localhost:3000/', client works on 'http://localhost:4200/'.
+Server works on port `3000`, client works is up on `4200`.
 
 
 ## Built With
 
+* [Node.js](https://github.com/nodejs/node) - JavaScript runtime for server;
 * [npm](https://github.com/npm/npm) - Package manager for JavaScript;
 * [Angular 5](https://github.com/angular/angular) - Development platform for client application;
-* [Node.js](https://github.com/nodejs/node) - JavaScript runtime for server;
-* [Express.js](https://github.com/expressjs/express) - Framework for Node.js;
 * [Express.js](https://github.com/expressjs/express) - Framework for Node.js;
 
 ## Author
