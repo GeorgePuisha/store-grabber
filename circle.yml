@@ -5,6 +5,8 @@ machine:
 dependencies:
   pre:
     - cd client
+    - npm install npm@latest -g
+    - npm install angular-cli@latest -g
     - npm install
 test:
   override:
