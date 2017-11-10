@@ -22,4 +22,11 @@ describe("NavbarComponent", () => {
   it("should create", () => {
     expect(component).toBeTruthy();
   });
+
+  it("should be visible", async(() => {
+    const fixture = TestBed.createComponent(NavbarComponent);
+    fixture.detectChanges();
+    const compiled = fixture.debugElement.nativeElement;
+    expect(compiled.querySelector("nav")).toBeTruthy();
+  }));
 });

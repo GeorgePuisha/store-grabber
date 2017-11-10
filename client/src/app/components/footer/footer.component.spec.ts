@@ -22,4 +22,11 @@ describe("FooterComponent", () => {
   it("should create", () => {
     expect(component).toBeTruthy();
   });
+
+  it("should be visible", async(() => {
+    const fixture = TestBed.createComponent(FooterComponent);
+    fixture.detectChanges();
+    const compiled = fixture.debugElement.nativeElement;
+    expect(compiled.querySelector("footer")).toBeTruthy();
+  }));
 });
