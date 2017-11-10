@@ -22,4 +22,11 @@ describe("GreetComponent", () => {
   it("should create", () => {
     expect(component).toBeTruthy();
   });
+
+  it("should be visible", async(() => {
+    const fixture = TestBed.createComponent(GreetComponent);
+    fixture.detectChanges();
+    const compiled = fixture.debugElement.nativeElement;
+    expect(compiled.querySelector("div.greet")).toBeTruthy();
+  }));
 });
