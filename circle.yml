@@ -8,4 +8,4 @@ dependencies:
     - npm install angular-cli@latest -g
 test:
   override:
-    - npm run test
+    - npm test
