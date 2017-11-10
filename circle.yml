@@ -4,8 +4,8 @@ machine:
 
 dependencies:
   pre:
-    - npm install npm@latest -g # Should fix bug in ng test
-    - npm install angular-cli@latest -g
+    - cd client
+    - npm install
 test:
   override:
     - npm test
