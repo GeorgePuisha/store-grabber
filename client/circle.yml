@@ -1,0 +1,66 @@
+machine:
+  services:
+    # this tells circle that we want to include docker in our build deployment
+    - docker
+  node:
+    # You can configure other node version here if needed
+    version: 6.12.0
+  # these are ENV variables the we can use on our build server
+  # please note that sensitive variables will be passed on the web panel
+  # Usually it"s a good practice to keep your private keys away from source control
+  environment:
+      # the is the name of the repository your created in docker hub
+      REPO: GeorgePuisha/store-grabber
+
+# General settings
+general:
+  # Circle ci allows you to save "artifacts" which are basically files you can access after the build finishes.
+  # we gonna save our coverage test results
+  artifacts:
+    - "coverage"
+
+# Dependencies
+dependencies:
+  pre:
+    # we will login to dockerhub here please note the the docker credentials are coming from the environment
+    # we will configure them in the web ui later
+    - docker login -u $DOCKER_USER -p $DOCKER_PASS -e $DOCKER_EMAIL
+
+    # Uncomment next section if you will implement SSL with nginx
+    # since we don"t want to give away our production ssl keys, we generate self signed test keys
+    # needed only in the build ENV we will save them on the  home folder
+    # - openssl req -x509 -nodes -newkey rsa:2048 -keyout ~/ci-test.key -out ~/ci-test.com.crt -subj "/C=NL/ST=Test SSL/L=Rotterdam/O=Testing Test/OU=IT Department/CN=circle.ci.demo"
+
+# Test Commands
+test:
+  override:
+    - karma start ./karma.conf.js:
+        environment:
+          JUNIT_REPORT_PATH: $CIRCLE_TEST_REPORTS/junit/
+          JUNIT_REPORT_NAME: test-results.xml
+
+deployment:
+  production:
+    # Circle will listen to every tag submitted on github we use a regex to catch every semver tag starting with "v"
+    # i.e "v1.0.0"
+    tag: /v[0-9]+(\.[0-9]+)*/
+    commands:
+      - ng build -prod
+      # here we build the docker container, the --rm=false is needed because some issue with
+      # circle build leading to uncritical error during the build
+      - docker build --rm=false -t $REPO:prod -f ./deployment/production/Dockerfile .
+      # you can remove the -v and the second 443 port if you don"t use SSL
+      - docker run -d -i -v ~/:/etc/nginx/certs -p 80:80 -p 443:443 $REPO:prod
+      # we want to test our newly built docker file to see if it"s properly responding the static html
+      - curl --retry 10 --retry-delay 5 -k -v https://localhost | grep "<app-root>"
+      # docker image tagging, i will explain it in the article in mroe detail
+      - docker tag $REPO:prod $REPO:$CIRCLE_TAG
+      - docker push $REPO:prod
+      - docker push $REPO:$CIRCLE_TAG
+      # execute a deployment script
+      - sh ./deployment/production/deploy.sh
+  #staging:
+    # here we can listen to every commit on the staging/qa branch
+    # branch: "staging"
+    # commands:
+      # your qa build steps can be specified here

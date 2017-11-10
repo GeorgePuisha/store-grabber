@@ -17,6 +17,7 @@
   },
   "homepage": "https://github.com/GeorgePuisha/store-grabber#readme",
   "devDependencies": {
-    "concurrently": "^3.5.0"
+    "concurrently": "^3.5.0",
+    "karma-junit-reporter": "^1.2.0"
   }
 }
