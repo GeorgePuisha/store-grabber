@@ -1,5 +1,5 @@
 import { Component, OnInit } from "@angular/core";
-import { HttpClient } from '@angular/common/http';
+
 
 @Component({
   selector: "app-navbar",
@@ -8,7 +8,7 @@ import { HttpClient } from '@angular/common/http';
 })
 export class NavbarComponent implements OnInit {
 
-  constructor(private http: HttpClient) {
+  constructor() {
    }
 
   ngOnInit() {
