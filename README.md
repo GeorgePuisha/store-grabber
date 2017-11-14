@@ -15,12 +15,17 @@ Client-server solution to track [Onliner.by](https://catalog.onliner.by/) prices
 Clone project to your computer.
 
 ```
-$ git init
 $ git clone https://github.com/GeorgePuisha/store-grabber.git
 ```
 ### Prerequisites
 
-To start with Store Grabber, you should have [Node](https://nodejs.org/en/download/package-manager/) installed. It already has [npm](https://github.com/npm/npm), so you can forward to the next step.
+To start with Store Grabber, you should have [Node](https://nodejs.org/en/download/package-manager/) installed. Project guaranteed to work with Node `^8.4.0`. It already has [npm](https://github.com/npm/npm), so your version must be up-to-date.
+
+Install [angular-cli](https://github.com/angular/angular-cli) globally:
+
+```
+$ npm install -g @angular/cli
+```
 
 ### Installing
 
@@ -30,15 +35,60 @@ Install all dependencies of both client & server.
 $ npm install
 ```
 
-Type `npm install` in `/store-grabber/store-grabber/`, `/store-grabber/store-grabber/client` and `/store-grabber/store-grabber/server` folders.
-
-To run server & client concurrently on localhost type `npm start` in `/store-grabber/store-grabber/`.
+To run server & client concurrently on localhost type `npm run dev` in root folder.
 
 ```
-$ npm start
+$ npm run dev
 ```
 
 Server works on port `3000`, client works is up on `4200`.
+
+### Running the tests
+
+Tests are provided by [Karma](https://karma-runner.github.io/1.0/index.html).
+
+Run tests with browser open:
+
+```
+$ ng test
+```
+
+Without browser...
+
+```
+$ npm tests
+```
+
+... which equals to `ng test --watch=false`
+
+### Deployment
+
+To deploy with Heroku, visit [official guide page](https://devcenter.heroku.com/articles/git).
+
+Briefly:
+
+```
+$ heroku login
+Enter your Heroku credentials.
+$ heroku create
+$ git push heroku master
+```
+
+Ensure the app is running.
+
+```
+heroku ps:scale web=1
+heroku open
+```
+
+heroku login
+Enter your Heroku credentials.
+
+Some hints:
+
+* Make sure node & npm version are specified in `package.json`;
+* Make sure `package.json` has `heroku-postbuild` script;
+* Your project should provide a Procfile. [more](https://devcenter.heroku.com/articles/getting-started-with-nodejs#define-a-procfile).
 
 
 ## Built With
@@ -46,7 +96,8 @@ Server works on port `3000`, client works is up on `4200`.
 * [Node.js](https://github.com/nodejs/node) - JavaScript runtime for server;
 * [npm](https://github.com/npm/npm) - Package manager for JavaScript;
 * [Angular 5](https://github.com/angular/angular) - Development platform for client application;
-* [Express.js](https://github.com/expressjs/express) - Framework for Node.js.
+* [Express.js](https://github.com/expressjs/express) - Framework for Node.js;
+* [Heroku](https://www.heroku.com/home) - Deployment platform.
 
 ## Author
 
