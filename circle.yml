@@ -6,7 +6,6 @@ dependencies:
   pre:
     - npm install -g @angular/cli
     - npm install -g npm@latest
-    - cd client && npm install
 test:
   override:
-    - cd client && npm test
+    - npm test
