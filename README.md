@@ -41,7 +41,7 @@ To run server & client concurrently on localhost type `npm run dev` in root fold
 $ npm run dev
 ```
 
-Server works on port `3000`, client works is up on `4200`.
+Server works on port `3000`, client is up on `4200`.
 
 ### Running the tests
 
@@ -59,7 +59,7 @@ Without browser...
 $ npm tests
 ```
 
-... which equals to `ng test --watch=false`
+...which equals to `ng test --watch=false`
 
 ### Deployment
 
@@ -80,9 +80,6 @@ Ensure the app is running.
 heroku ps:scale web=1
 heroku open
 ```
-
-heroku login
-Enter your Heroku credentials.
 
 Some hints:
 
