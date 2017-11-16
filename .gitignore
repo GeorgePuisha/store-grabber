@@ -58,3 +58,4 @@ typings/
 .env
 
 /TESTS.xml
+/credentials.json
