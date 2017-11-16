@@ -7,8 +7,7 @@
 
 # Store Grabber
 
-Client-server solution to track [Onliner.by](https://catalog.onliner.by/) prices and to notify user about price changes.
-
+Client part of client-server solution to track [Onliner.by](https://catalog.onliner.by/) prices and to notify user about price changes.
 
 ## Getting Started
 
@@ -35,12 +34,19 @@ Install all dependencies of both client & server.
 $ npm install
 ```
 
+<<<<<<< Updated upstream
+=======
+<<<<<<< Updated upstream
+Type `npm install` in `/store-grabber/store-grabber/`, `/store-grabber/store-grabber/client` and `/store-grabber/store-grabber/server` folders.
+=======
+>>>>>>> Stashed changes
 To run client on localhost type `npm run dev` in root folder.
 
 ```
 $ npm run dev
 ```
 
+<<<<<<< Updated upstream
 To run server, you should provide it with database connection string. There are two ways to load credentials: change value of `connectionString` variable or load it from environmental variable.
 
 ```
@@ -48,6 +54,9 @@ $ DATABASE_URL='postgres://user:password@host:port/database' node server.js
 ```
 
 Server works on port `3000`, client is up on `4200`.
+=======
+Client is up on `4200`.
+>>>>>>> Stashed changes
 
 ### Running the tests
 
@@ -66,6 +75,10 @@ $ npm tests
 ```
 
 ...which equals to `ng test --watch=false`
+<<<<<<< Updated upstream
+=======
+>>>>>>> Stashed changes
+>>>>>>> Stashed changes
 
 ### Deployment
 
@@ -100,9 +113,18 @@ Some hints:
 * [Node.js](https://github.com/nodejs/node) - JavaScript runtime for server;
 * [npm](https://github.com/npm/npm) - Package manager for JavaScript;
 * [Angular 5](https://github.com/angular/angular) - Development platform for client application;
+<<<<<<< Updated upstream
 * [Express.js](https://github.com/expressjs/express) - Framework for Node.js;
 * [Heroku](https://www.heroku.com/home) - Deployment platform.
 * [node-postgres](https://github.com/brianc/node-postgres) - PostgreSQL client for Node.js.
+=======
+<<<<<<< Updated upstream
+* [Express.js](https://github.com/expressjs/express) - Framework for Node.js.
+=======
+* [Express.js](https://github.com/expressjs/express) - Framework for Node.js;
+* [Heroku](https://www.heroku.com/home) - Deployment platform.
+>>>>>>> Stashed changes
+>>>>>>> Stashed changes
 
 ## Author
 

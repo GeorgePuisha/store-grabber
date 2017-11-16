@@ -57,5 +57,12 @@ typings/
 # dotenv environment variables file
 .env
 
+<<<<<<< Updated upstream
 /TESTS.xml
 /credentials.json
+=======
+<<<<<<< Updated upstream
+=======
+/TESTS.xml
+>>>>>>> Stashed changes
+>>>>>>> Stashed changes
