@@ -17,6 +17,12 @@ import { GreetComponent } from "./components/greet/greet.component";
     FooterComponent,
     GreetComponent
   ],
+  exports: [
+    AppComponent,
+    NavbarComponent,
+    FooterComponent,
+    GreetComponent
+  ],
   imports: [
     BrowserModule,
     HttpClientModule
