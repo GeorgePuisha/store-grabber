@@ -1,7 +1,7 @@
 import { BrowserModule } from "@angular/platform-browser";
 import { NgModule } from "@angular/core";
 import { HttpClientModule } from "@angular/common/http";
-import 'rxjs/Rx';
+import "rxjs/Rx";
 
 
 import { AppComponent } from "./app.component";
