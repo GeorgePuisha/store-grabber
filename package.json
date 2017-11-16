@@ -1,29 +1,4 @@
 {
-<<<<<<< Updated upstream
-=======
-<<<<<<< Updated upstream
-  "name": "store-grabber",
-  "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
-  "scripts": {
-    "start": "concurrently \"cd client && npm start\" \"cd server && npm start\""
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/GeorgePuisha/store-grabber.git"
-  },
-  "author": "GeorgePuisha",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/GeorgePuisha/store-grabber/issues"
-  },
-  "homepage": "https://github.com/GeorgePuisha/store-grabber#readme",
-  "devDependencies": {
-    "concurrently": "^3.5.0"
-  }
-=======
->>>>>>> Stashed changes
     "name": "store-grabber",
     "version": "0.0.0",
     "repository": {
@@ -38,11 +13,7 @@
     "homepage": "https://github.com/GeorgePuisha/store-grabber#readme",
     "scripts": {
         "ng": "ng",
-<<<<<<< Updated upstream
-        "dev": "ng serve --proxy-config proxy.config.json",
-=======
         "dev": "ng serve",
->>>>>>> Stashed changes
         "start": "node server.js",
         "build": "ng build",
         "test": "ng test --watch=false",
@@ -61,13 +32,7 @@
         "@angular/platform-browser": "^5.0.1",
         "@angular/platform-browser-dynamic": "^5.0.1",
         "@angular/router": "^5.0.1",
-<<<<<<< Updated upstream
         "core-js": "^2.4.1",
-        "pg": "^7.4.0",
-=======
-        "auth0-js": "^8.11.2",
-        "core-js": "^2.4.1",
->>>>>>> Stashed changes
         "rxjs": "^5.5.2",
         "tslib": "^1.8.0",
         "zone.js": "^0.8.18"
@@ -94,14 +59,7 @@
         "typescript": "2.4.2"
     },
     "engines": {
-<<<<<<< Updated upstream
-        "node": "8.4.0",
-        "npm": "5.0.3"
-    }
-=======
         "node": "8.9.1",
         "npm": "5.5.1"
     }
->>>>>>> Stashed changes
->>>>>>> Stashed changes
 }
