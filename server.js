@@ -1,8 +1,16 @@
 const express = require("express");
-const app = express();
 const path = require("path");
+const { Pool, Client } = require("pg");
+const app = express();
 
-var distDir = __dirname + "/dist/";
+const distDir = __dirname + "/dist/";
+const connectionString = "postgres://user:password@host:port/database";
+
+const pool = new Pool({
+    connectionString: process.env.DATABASE_URL || connectionString,
+    ssl: true
+});
+
 app.use(express.static(distDir));
 
 app.get("/", function(req, res) {});

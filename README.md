@@ -35,10 +35,16 @@ Install all dependencies of both client & server.
 $ npm install
 ```
 
-To run server & client concurrently on localhost type `npm run dev` in root folder.
+To run client on localhost type `npm run dev` in root folder.
 
 ```
 $ npm run dev
+```
+
+To run server, you should provide it with database connection string. There are two ways to load credentials: change value of `connectionString` variable or load it from environmental variable.
+
+```
+$ DATABASE_URL='postgres://user:password@host:port/database' node server.js
 ```
 
 Server works on port `3000`, client is up on `4200`.
@@ -85,7 +91,8 @@ Some hints:
 
 * Make sure node & npm version are specified in `package.json`;
 * Make sure `package.json` has `heroku-postbuild` script;
-* Your project should provide a Procfile. [more](https://devcenter.heroku.com/articles/getting-started-with-nodejs#define-a-procfile).
+* Your project should provide a Procfile. [more](https://devcenter.heroku.com/articles/getting-started-with-nodejs#define-a-procfile);
+* Easy start with Heroku ["Provision a database"](https://devcenter.heroku.com/articles/getting-started-with-nodejs#provision-a-database) article.
 
 
 ## Built With
@@ -95,6 +102,7 @@ Some hints:
 * [Angular 5](https://github.com/angular/angular) - Development platform for client application;
 * [Express.js](https://github.com/expressjs/express) - Framework for Node.js;
 * [Heroku](https://www.heroku.com/home) - Deployment platform.
+* [node-postgres](https://github.com/brianc/node-postgres) - PostgreSQL client for Node.js.
 
 ## Author
 
