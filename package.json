@@ -13,7 +13,7 @@
     "homepage": "https://github.com/GeorgePuisha/store-grabber#readme",
     "scripts": {
         "ng": "ng",
-        "dev": "ng serve --proxy-config proxy.config.json",
+        "dev": "ng serve",
         "start": "node server.js",
         "build": "ng build",
         "test": "ng test --watch=false",
@@ -59,7 +59,7 @@
         "typescript": "2.4.2"
     },
     "engines": {
-        "node": "8.4.0",
-        "npm": "5.0.3"
+        "node": "8.9.1",
+        "npm": "5.5.1"
     }
 }

@@ -7,8 +7,7 @@
 
 # Store Grabber
 
-Client-server solution to track [Onliner.by](https://catalog.onliner.by/) prices and to notify user about price changes.
-
+Client part of client-server solution to track [Onliner.by](https://catalog.onliner.by/) prices and to notify user about price changes.
 
 ## Getting Started
 
@@ -35,13 +34,13 @@ Install all dependencies of both client & server.
 $ npm install
 ```
 
-To run server & client concurrently on localhost type `npm run dev` in root folder.
+To run client on localhost type `npm run dev` in root folder.
 
 ```
 $ npm run dev
 ```
 
-Server works on port `3000`, client is up on `4200`.
+Client is up on `4200`.
 
 ### Running the tests
 
@@ -85,7 +84,8 @@ Some hints:
 
 * Make sure node & npm version are specified in `package.json`;
 * Make sure `package.json` has `heroku-postbuild` script;
-* Your project should provide a Procfile. [more](https://devcenter.heroku.com/articles/getting-started-with-nodejs#define-a-procfile).
+* Your project should provide a Procfile. [more](https://devcenter.heroku.com/articles/getting-started-with-nodejs#define-a-procfile);
+* Easy start with Heroku ["Provision a database"](https://devcenter.heroku.com/articles/getting-started-with-nodejs#provision-a-database) article.
 
 
 ## Built With
@@ -95,6 +95,7 @@ Some hints:
 * [Angular 5](https://github.com/angular/angular) - Development platform for client application;
 * [Express.js](https://github.com/expressjs/express) - Framework for Node.js;
 * [Heroku](https://www.heroku.com/home) - Deployment platform.
+
 
 ## Author
 
