@@ -8,9 +8,9 @@ describe("FooterComponent", () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ FooterComponent ]
+      declarations: [FooterComponent]
     })
-    .compileComponents();
+      .compileComponents();
   }));
 
   beforeEach(() => {
@@ -23,7 +23,7 @@ describe("FooterComponent", () => {
     expect(component).toBeTruthy();
   });
 
-  it("should be visible", async(() => {
+  it("should be visible by default", async(() => {
     const fixture = TestBed.createComponent(FooterComponent);
     fixture.detectChanges();
     const compiled = fixture.debugElement.nativeElement;

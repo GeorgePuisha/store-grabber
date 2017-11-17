@@ -30,13 +30,13 @@ export class AuthService {
         this.router.navigate(["/"]);
       } else if (err) {
         this.router.navigate(["/"]);
-        console.log(err);
       }
     });
   }
 
   private setSession(authResult): void {
     const expiresAt = JSON.stringify((authResult.expiresIn * 1000) + new Date().getTime());
+    console.log(expiresAt);
     localStorage.setItem("access_token", authResult.accessToken);
     localStorage.setItem("id_token", authResult.idToken);
     localStorage.setItem("expires_at", expiresAt);

@@ -35,10 +35,21 @@ describe("GreetComponent", () => {
     expect(component).toBeTruthy();
   });
 
-  it("should be visible", async(() => {
+  it("should be visible by default", async(() => {
     const fixture = TestBed.createComponent(GreetComponent);
     fixture.detectChanges();
     const compiled = fixture.debugElement.nativeElement;
     expect(compiled.querySelector("div.greet")).toBeTruthy();
   }));
+
+  it("should be invisible if authenticated", () => {
+    const expiresAt = JSON.stringify(1000 + new Date().getTime());
+    localStorage.setItem("expires_at", expiresAt);
+
+    const fixture = TestBed.createComponent(GreetComponent);
+    fixture.detectChanges();
+    const compiled = fixture.debugElement.nativeElement;
+    expect(compiled.querySelector("div.greet")).toBeNull();
+  });
+
 });
