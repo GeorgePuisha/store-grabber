@@ -57,5 +57,5 @@ typings/
 # dotenv environment variables file
 .env
 
+
 /TESTS.xml
-/credentials.json
