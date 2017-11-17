@@ -3,7 +3,7 @@
     <a class="navbar-brand" href="/">GRABBER</a>
     <div class="collapse navbar-collapse">
       <div class="navbar-nav">
-        <a class="btn btn-primary btn-margin">
+        <a class="btn btn-primary btn-margin" id="search" *ngIf="auth.isAuthenticated()">
                     Search
                 </a>
       </div>
@@ -14,7 +14,7 @@
         <a class="btn btn-primary btn-margin navbar-right" *ngIf="!auth.isAuthenticated()" (click)="auth.login()">
                     Log In
                 </a>
-        <a class="btn btn-primary btn-margin navbar-right" *ngIf="auth.isAuthenticated()" (click)="auth.logout()">
+        <a class="btn btn-primary btn-margin navbar-right" id="logout" *ngIf="auth.isAuthenticated()" (click)="auth.logout()">
                     Log Out
                 </a>
       </div>

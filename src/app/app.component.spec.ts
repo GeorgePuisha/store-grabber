@@ -1,9 +1,13 @@
 import { TestBed, async } from "@angular/core/testing";
+
+import { RouterTestingModule } from "@angular/router/testing";
+
 import { AppComponent } from "./app.component";
 import { NavbarComponent } from "./components/navbar/navbar.component";
 import { FooterComponent } from "./components/footer/footer.component";
 import { GreetComponent } from "./components/greet/greet.component";
 
+import { AuthService } from "./services/auth/auth.service";
 
 describe("AppComponent", () => {
   beforeEach(async(() => {
@@ -14,6 +18,12 @@ describe("AppComponent", () => {
         FooterComponent,
         GreetComponent
       ],
+      imports: [
+        RouterTestingModule
+      ],
+      providers: [
+        AuthService,
+      ]
     }).compileComponents();
   }));
   it("should create the application", async(() => {
