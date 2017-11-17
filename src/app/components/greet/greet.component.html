@@ -1,13 +1,13 @@
-<div class="d-flex justify-content-center">
-    <div class="greet jumbotron">
-        <h1 class="display-3">Hello, stranger</h1>
-        <p class="lead text text-dark">This is a site where you can watch the <a href="https://www.onliner.by/">onliner.com</a> freshest goods.</p>
-        <hr class="my-4">
-        <p>You can add them to favourite list. You just need to log in!</p>
-        <p class="lead">
-            <a class="btn btn-primary btn-margin navbar-right">
+<div class="d-flex justify-content-center" *ngIf="!auth.isAuthenticated()">
+  <div class="greet jumbotron">
+    <h1 class="display-3">Hello, stranger</h1>
+    <p class="lead text text-dark">This is a site where you can watch the <a href="https://www.onliner.by/">onliner.com</a> freshest goods.</p>
+    <hr class="my-4">
+    <p>You can add them to favourite list. You just need to log in!</p>
+    <p class="lead">
+      <a class="btn btn-primary btn-margin navbar-right">
                 Start
             </a>
-        </p>
-    </div>
+    </p>
+  </div>
 </div>
