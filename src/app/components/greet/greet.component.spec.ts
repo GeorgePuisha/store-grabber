@@ -2,15 +2,27 @@ import { async, ComponentFixture, TestBed } from "@angular/core/testing";
 
 import { GreetComponent } from "./greet.component";
 
+import { RouterTestingModule } from "@angular/router/testing";
+
+import { AuthService } from "../../services/auth/auth.service";
+
 describe("GreetComponent", () => {
   let component: GreetComponent;
   let fixture: ComponentFixture<GreetComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ GreetComponent ]
+      declarations: [
+        GreetComponent
+      ],
+      imports: [
+        RouterTestingModule
+      ],
+      providers: [
+        AuthService,
+      ]
     })
-    .compileComponents();
+      .compileComponents();
   }));
 
   beforeEach(() => {
