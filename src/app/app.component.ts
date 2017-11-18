@@ -4,6 +4,7 @@ import { NavbarComponent } from "./components/navbar/navbar.component";
 import { FooterComponent } from "./components/footer/footer.component";
 import { GreetComponent } from "./components/greet/greet.component";
 
+import { AuthService } from "./services/auth/auth.service";
 
 @Component({
   selector: "app-root",
@@ -12,4 +13,8 @@ import { GreetComponent } from "./components/greet/greet.component";
 })
 export class AppComponent {
   title = "app";
+
+  constructor(public auth: AuthService) {
+    auth.handleAuthentication();
+  }
 }
