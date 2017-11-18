@@ -51,7 +51,7 @@ export class AuthService {
   private saveUser(auth) {
     auth.getProfile((err, profile) => {
       this.http
-        .get(environment.URL + "login/${profile.name}/${profile.nickname}");
+        .get(environment.API_URL + "login/" + profile.name + "/" + profile.nickname)
     });
   }
 
