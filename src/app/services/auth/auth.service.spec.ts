@@ -11,7 +11,7 @@ import { GreetComponent } from "../../components/greet/greet.component";
 import { FooterComponent } from "../../components/footer/footer.component";
 import { ProfileComponent } from "../../components/profile/profile.component";
 
-import { HttpClient } from "@angular/common/http";
+import { HttpClientModule, HttpClient } from "@angular/common/http";
 
 import { AuthService } from "./auth.service";
 
@@ -32,10 +32,11 @@ describe("AuthService", () => {
         ProfileComponent
       ],
       imports: [
+        HttpClientModule,
         RouterTestingModule.withRoutes(appRoutes)
       ],
       providers: [
-        AuthService
+        AuthService,
       ]
     });
 

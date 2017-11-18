@@ -7,6 +7,8 @@ import { NavbarComponent } from "./components/navbar/navbar.component";
 import { FooterComponent } from "./components/footer/footer.component";
 import { GreetComponent } from "./components/greet/greet.component";
 
+import { HttpClientModule, HttpClient } from "@angular/common/http";
+
 import { AuthService } from "./services/auth/auth.service";
 
 describe("AppComponent", () => {
@@ -19,6 +21,7 @@ describe("AppComponent", () => {
         GreetComponent
       ],
       imports: [
+        HttpClientModule,
         RouterTestingModule
       ],
       providers: [

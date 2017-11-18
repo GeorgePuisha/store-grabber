@@ -4,6 +4,8 @@ import { GreetComponent } from "./greet.component";
 
 import { RouterTestingModule } from "@angular/router/testing";
 
+import { HttpClientModule, HttpClient } from "@angular/common/http";
+
 import { AuthService } from "../../services/auth/auth.service";
 
 describe("GreetComponent", () => {
@@ -16,6 +18,7 @@ describe("GreetComponent", () => {
         GreetComponent
       ],
       imports: [
+        HttpClientModule,
         RouterTestingModule
       ],
       providers: [
