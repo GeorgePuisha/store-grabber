@@ -5,5 +5,6 @@
 
 export const environment = {
   production: false,
-  URL: "http://localhost:4200/"
+  URL: "http://localhost:4200/",
+  CLIENT_ID: "BAEUD0UBR83uSbxpNJhHuLuGRjg2KEC5"
 };
