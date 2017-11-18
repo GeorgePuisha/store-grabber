@@ -6,7 +6,6 @@ import { GreetComponent } from "./components/greet/greet.component";
 
 import { AuthService } from "./services/auth/auth.service";
 
-
 @Component({
   selector: "app-root",
   templateUrl: "./app.component.html",
