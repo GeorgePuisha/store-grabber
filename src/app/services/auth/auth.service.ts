@@ -8,7 +8,7 @@ import * as auth0 from "auth0-js";
 export class AuthService {
 
   auth0 = new auth0.WebAuth({
-    clientID: "BAEUD0UBR83uSbxpNJhHuLuGRjg2KEC5",
+    clientID: environment.CLIENT_ID,
     domain: "store-grabber.eu.auth0.com",
     responseType: "token id_token",
     audience: "https://store-grabber.eu.auth0.com/userinfo",
