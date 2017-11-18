@@ -45,14 +45,14 @@ export class AuthService {
     localStorage.setItem("expires_at", expiresAt);
   }
 
-  public getProfile(cb): void {
+  public getProfile(saveProfile): void {
     const accessToken = localStorage.getItem("access_token");
     const self = this;
     this.auth0.client.userInfo(accessToken, (err, profile) => {
       if (profile) {
         self.userProfile = profile;
       }
-      cb(err, profile);
+      saveProfile(err, profile);
     });
   }
 
