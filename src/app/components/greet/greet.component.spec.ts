@@ -39,7 +39,7 @@ describe("GreetComponent", () => {
     const fixture = TestBed.createComponent(GreetComponent);
     fixture.detectChanges();
     const compiled = fixture.debugElement.nativeElement;
-    expect(compiled.querySelector("div.greet")).toBeTruthy();
+    expect(compiled.querySelector("div#greet")).toBeTruthy();
   }));
 
   it("should be invisible if authenticated", () => {
