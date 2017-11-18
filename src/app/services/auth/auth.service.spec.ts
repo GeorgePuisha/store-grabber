@@ -11,10 +11,13 @@ import { GreetComponent } from "../../components/greet/greet.component";
 import { FooterComponent } from "../../components/footer/footer.component";
 import { ProfileComponent } from "../../components/profile/profile.component";
 
+import { HttpClient } from "@angular/common/http";
+
 import { AuthService } from "./auth.service";
 
 describe("AuthService", () => {
 
+  let http: HttpClient;
   let location: Location;
   let router: Router;
   let fixture;
@@ -37,6 +40,7 @@ describe("AuthService", () => {
     });
 
     router = TestBed.get(Router);
+    http = TestBed.get(HttpClient);
     location = TestBed.get(Location);
 
     fixture = TestBed.createComponent(AppComponent);
@@ -50,7 +54,7 @@ describe("AuthService", () => {
   describe("Isolated AuthService tests", () => {
     let auth: AuthService;
     beforeEach(() => {
-      auth = new AuthService(router);
+      auth = new AuthService(router, http);
     });
 
     describe("logout()", () => {

@@ -2,6 +2,7 @@ import { environment } from "../../../environments/environment";
 
 import { Injectable } from "@angular/core";
 import { Router } from "@angular/router";
+import { HttpClient } from "@angular/common/http";
 
 import "rxjs/add/operator/filter";
 import * as auth0 from "auth0-js";
@@ -20,7 +21,7 @@ export class AuthService {
     scope: "openid  profile"
   });
 
-  constructor(public router: Router) { }
+  constructor(public router: Router, public http: HttpClient) { }
 
   public login(): void {
     this.auth0.authorize();
@@ -44,16 +45,24 @@ export class AuthService {
     localStorage.setItem("access_token", authResult.accessToken);
     localStorage.setItem("id_token", authResult.idToken);
     localStorage.setItem("expires_at", expiresAt);
+    this.saveUser(this);
   }
 
-  public getProfile(saveProfile): void {
+  private saveUser(auth) {
+    auth.getProfile((err, profile) => {
+      this.http
+        .get(environment.URL + "login/${profile.name}/${profile.nickname}");
+    });
+  }
+
+  public getProfile(watchProfile): void {
     const accessToken = localStorage.getItem("access_token");
     const self = this;
     this.auth0.client.userInfo(accessToken, (err, profile) => {
       if (profile) {
         self.userProfile = profile;
       }
-      saveProfile(err, profile);
+      watchProfile(err, profile);
     });
   }
 
