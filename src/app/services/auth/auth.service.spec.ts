@@ -9,6 +9,7 @@ import { AppComponent } from "../../app.component";
 import { NavbarComponent } from "../../components/navbar/navbar.component";
 import { GreetComponent } from "../../components/greet/greet.component";
 import { FooterComponent } from "../../components/footer/footer.component";
+import { ProfileComponent } from "../../components/profile/profile.component";
 
 import { AuthService } from "./auth.service";
 
@@ -24,7 +25,8 @@ describe("AuthService", () => {
         AppComponent,
         NavbarComponent,
         GreetComponent,
-        FooterComponent
+        FooterComponent,
+        ProfileComponent
       ],
       imports: [
         RouterTestingModule.withRoutes(appRoutes)
