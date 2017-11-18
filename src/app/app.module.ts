@@ -10,8 +10,10 @@ import { AppComponent } from "./app.component";
 import { NavbarComponent } from "./components/navbar/navbar.component";
 import { FooterComponent } from "./components/footer/footer.component";
 import { GreetComponent } from "./components/greet/greet.component";
+import { ProfileComponent } from './components/profile/profile.component';
 
 import { AuthService } from "./services/auth/auth.service";
+
 
 
 @NgModule({
@@ -19,13 +21,15 @@ import { AuthService } from "./services/auth/auth.service";
     AppComponent,
     NavbarComponent,
     FooterComponent,
-    GreetComponent
+    GreetComponent,
+    ProfileComponent
   ],
   exports: [
     AppComponent,
     NavbarComponent,
     FooterComponent,
-    GreetComponent
+    GreetComponent,
+    ProfileComponent
   ],
   imports: [
     BrowserModule,
