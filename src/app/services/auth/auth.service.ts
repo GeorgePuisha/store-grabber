@@ -39,9 +39,16 @@ export class AuthService {
     });
   }
 
+  private hoursToMilliseconds(hours: number): number {
+    const minutesInHour = 60;
+    const secondsInMinute = 60;
+    const millisecondsInSecond = 1000;
+    return hours * minutesInHour * secondsInMinute * millisecondsInSecond;
+  }
+
   private setSession(authResult): void {
-    const second = 1000;
-    const expiresAt = JSON.stringify((authResult.expiresIn * second) + new Date().getTime());
+    const hoursInDay = 24;
+    const expiresAt = JSON.stringify(this.hoursToMilliseconds(hoursInDay) + new Date().getTime());
     localStorage.setItem("access_token", authResult.accessToken);
     localStorage.setItem("id_token", authResult.idToken);
     localStorage.setItem("expires_at", expiresAt);
