@@ -58,7 +58,10 @@ export class AuthService {
   private saveUser(auth) {
     auth.getProfile((err, profile) => {
       this.http
-        .get(environment.API_URL + "login/" + profile.name + "/" + profile.nickname)
+        .post(environment.API_URL + "login/", { email: profile.name, nickname: profile.nickname })
+        .subscribe((err) => {
+          console.log(err);
+        })
     });
   }
 
