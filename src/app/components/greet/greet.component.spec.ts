@@ -4,6 +4,8 @@ import { GreetComponent } from "./greet.component";
 
 import { RouterTestingModule } from "@angular/router/testing";
 
+import { HttpClientModule, HttpClient } from "@angular/common/http";
+
 import { AuthService } from "../../services/auth/auth.service";
 
 describe("GreetComponent", () => {
@@ -16,6 +18,7 @@ describe("GreetComponent", () => {
         GreetComponent
       ],
       imports: [
+        HttpClientModule,
         RouterTestingModule
       ],
       providers: [
@@ -39,7 +42,7 @@ describe("GreetComponent", () => {
     const fixture = TestBed.createComponent(GreetComponent);
     fixture.detectChanges();
     const compiled = fixture.debugElement.nativeElement;
-    expect(compiled.querySelector("div.greet")).toBeTruthy();
+    expect(compiled.querySelector("div#greet")).toBeTruthy();
   }));
 
   it("should be invisible if authenticated", () => {

@@ -5,6 +5,8 @@ import { NavbarComponent } from "./navbar.component";
 
 import { RouterTestingModule } from "@angular/router/testing";
 
+import { HttpClientModule, HttpClient } from "@angular/common/http";
+
 import { AuthService } from "../../services/auth/auth.service";
 
 describe("NavbarComponent", () => {
@@ -17,6 +19,7 @@ describe("NavbarComponent", () => {
         NavbarComponent
       ],
       imports: [
+        HttpClientModule,
         RouterTestingModule
       ],
       providers: [

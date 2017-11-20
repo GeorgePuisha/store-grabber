@@ -1,0 +1,13 @@
+<div class="d-flex justify-content-center" *ngIf="auth.isAuthenticated()">
+  <div class="jumbotron">
+    <div class="alert text-center">
+      <h2>{{profile?.nickname}}</h2>
+    </div>
+    <div class="alert text-center">
+      <img class="rounded-circle" src="{{profile?.picture}}" alt="Profile Picture">
+    </div>
+    <div class="alert text-center">
+      <h4>{{profile?.name}}</h4>
+    </div>
+  </div>
+</div>

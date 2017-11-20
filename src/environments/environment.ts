@@ -6,5 +6,6 @@
 export const environment = {
   production: false,
   URL: "http://localhost:4200/",
+  API_URL: "/api/",
   CLIENT_ID: "BAEUD0UBR83uSbxpNJhHuLuGRjg2KEC5"
 };
