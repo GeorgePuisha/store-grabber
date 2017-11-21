@@ -59,6 +59,7 @@ export class AuthService {
     auth.getProfile((err, profile) => {
       this.http
         .post(environment.API_URL + "login/", { email: profile.name, nickname: profile.nickname })
+        .subscribe();
     });
   }
 
