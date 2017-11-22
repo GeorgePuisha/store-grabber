@@ -7,9 +7,10 @@ import { appRoutes } from "../../app.routing";
 
 import { AppComponent } from "../../app.component";
 import { NavbarComponent } from "../../components/navbar/navbar.component";
-import { GreetComponent } from "../../components/greet/greet.component";
+import { HomeComponent } from "../../components/home/home.component";
 import { FooterComponent } from "../../components/footer/footer.component";
 import { ProfileComponent } from "../../components/profile/profile.component";
+import { SearchComponent } from "../../components/search/search.component";
 
 import { HttpClientModule, HttpClient } from "@angular/common/http";
 
@@ -27,9 +28,10 @@ describe("AuthService", () => {
       declarations: [
         AppComponent,
         NavbarComponent,
-        GreetComponent,
+        HomeComponent,
         FooterComponent,
-        ProfileComponent
+        ProfileComponent,
+        SearchComponent
       ],
       imports: [
         HttpClientModule,

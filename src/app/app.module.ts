@@ -9,27 +9,20 @@ import { environment } from "../environments/environment";
 import { AppComponent } from "./app.component";
 import { NavbarComponent } from "./components/navbar/navbar.component";
 import { FooterComponent } from "./components/footer/footer.component";
-import { GreetComponent } from "./components/greet/greet.component";
+import { HomeComponent } from "./components/home/home.component";
 import { ProfileComponent } from './components/profile/profile.component';
+import { SearchComponent } from './components/search/search.component';
 
 import { AuthService } from "./services/auth/auth.service";
-
-
 
 @NgModule({
   declarations: [
     AppComponent,
     NavbarComponent,
     FooterComponent,
-    GreetComponent,
-    ProfileComponent
-  ],
-  exports: [
-    AppComponent,
-    NavbarComponent,
-    FooterComponent,
-    GreetComponent,
-    ProfileComponent
+    HomeComponent,
+    ProfileComponent,
+    SearchComponent
   ],
   imports: [
     BrowserModule,

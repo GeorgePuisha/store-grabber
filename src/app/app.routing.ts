@@ -1,12 +1,12 @@
 import { ModuleWithProviders } from "@angular/core";
 import { Routes, RouterModule } from "@angular/router";
-import { GreetComponent } from "./components/greet/greet.component";
+import { HomeComponent } from "./components/home/home.component";
 import { ProfileComponent } from './components/profile/profile.component';
 
 export const appRoutes: Routes = [
   {
     path: "",
-    component: GreetComponent
+    component: HomeComponent
   },
   {
     path: "profile",

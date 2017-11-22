@@ -1,7 +1,7 @@
 import { async, ComponentFixture, TestBed } from "@angular/core/testing";
-import { By } from "@angular/platform-browser";
 
-import { NavbarComponent } from "./navbar.component";
+import { HomeComponent } from "./home.component";
+import { SearchComponent } from "../search/search.component";
 
 import { RouterTestingModule } from "@angular/router/testing";
 
@@ -9,14 +9,16 @@ import { HttpClientModule, HttpClient } from "@angular/common/http";
 
 import { AuthService } from "../../services/auth/auth.service";
 
-describe("NavbarComponent", () => {
-  let component: NavbarComponent;
-  let fixture: ComponentFixture<NavbarComponent>;
+describe("HomeComponent", () => {
+  let component: HomeComponent;
+  let fixture: ComponentFixture<HomeComponent>;
   let compiled;
+
   beforeEach(async(() => {
     TestBed.configureTestingModule({
       declarations: [
-        NavbarComponent
+        HomeComponent,
+        SearchComponent
       ],
       imports: [
         HttpClientModule,
@@ -30,7 +32,7 @@ describe("NavbarComponent", () => {
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(NavbarComponent);
+    fixture = TestBed.createComponent(HomeComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
     compiled = fixture.debugElement.nativeElement;
@@ -40,14 +42,17 @@ describe("NavbarComponent", () => {
     expect(component).toBeTruthy();
   });
 
-  it("should be visible by default", async(() => {
-    expect(compiled.querySelector("nav")).toBeTruthy();
-  }));
+  describe("Greetings", () => {
+    it("should be visible by default", async(() => {
+      expect(compiled.querySelector("div#greet")).toBeDefined();
+    }));
+  });
 
-  describe("\"Log out\" button", () => {
-
-    it("should be visible if not authenticated", () => {
-      expect(compiled.querySelector("#logout")).toBeTruthy();
+  describe("\"Search\" field", () => {
+    it("should be visible if authenticated", () => {
+      const expiresAt = JSON.stringify(1000 + new Date().getTime());
+      localStorage.setItem("expires_at", expiresAt);
+      expect(compiled.querySelector("div#search")).toBeDefined();
     });
   });
 });
