@@ -3,10 +3,6 @@
     <a class="navbar-brand" href="">GRABBER</a>
     <div class="collapse navbar-collapse">
       <div class="navbar-nav">
-        <a class="btn btn-primary btn-margin" id="search" *ngIf="auth.isAuthenticated()">
-                    Search
-                </a>
-        <app-search></app-search>
       </div>
       <div class="navbar-nav navbar-right ml-auto">
         <a class="btn btn-secondary btn-margin" *ngIf="auth.isAuthenticated()" href="/profile">

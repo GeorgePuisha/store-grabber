@@ -1,6 +1,17 @@
-<div>
-  <a class="btn btn-primary btn-margin" id="search" *ngIf="auth.isAuthenticated()">
-                Search
-            </a>
-  <input class="form-control" type="search" value="" id="example-search-input">s
+<div class="d-flex justify-content-center">
+  <div class="jumbotron d-flex flex-column ">
+    <div class="alert">
+      <h2>Start your search here</h2>
+    </div>
+    <div class="d-flex flex-row justify-content-center">
+      <div>
+        <div class="input-group">
+          <input class="form-control" type="search" value="" id="example-search-input">
+          <span class="input-group-btn">
+            <button class="btn btn-primary" id="search">Go</button>
+          </span>
+        </div>
+      </div>
+    </div>
+  </div>
 </div>

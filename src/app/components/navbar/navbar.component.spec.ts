@@ -2,7 +2,6 @@ import { async, ComponentFixture, TestBed } from "@angular/core/testing";
 import { By } from "@angular/platform-browser";
 
 import { NavbarComponent } from "./navbar.component";
-import { SearchComponent } from "../search/search.component";
 
 import { RouterTestingModule } from "@angular/router/testing";
 
@@ -17,8 +16,7 @@ describe("NavbarComponent", () => {
   beforeEach(async(() => {
     TestBed.configureTestingModule({
       declarations: [
-        NavbarComponent,
-        SearchComponent
+        NavbarComponent
       ],
       imports: [
         HttpClientModule,
@@ -50,15 +48,6 @@ describe("NavbarComponent", () => {
 
     it("should be visible if not authenticated", () => {
       expect(compiled.querySelector("#logout")).toBeTruthy();
-    });
-  });
-
-  describe("\"Search\" button", () => {
-    it("should be visible if authenticated", () => {
-      const expiresAt = JSON.stringify(1000 + new Date().getTime());
-      localStorage.setItem("expires_at", expiresAt);
-
-      expect(compiled.querySelector("#search")).toBeTruthy();
     });
   });
 });
