@@ -2,6 +2,7 @@ import { async, ComponentFixture, TestBed } from "@angular/core/testing";
 import { By } from "@angular/platform-browser";
 
 import { NavbarComponent } from "./navbar.component";
+import { SearchComponent } from "../search/search.component";
 
 import { RouterTestingModule } from "@angular/router/testing";
 
@@ -16,7 +17,8 @@ describe("NavbarComponent", () => {
   beforeEach(async(() => {
     TestBed.configureTestingModule({
       declarations: [
-        NavbarComponent
+        NavbarComponent,
+        SearchComponent
       ],
       imports: [
         HttpClientModule,
