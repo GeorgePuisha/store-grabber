@@ -6,9 +6,9 @@
     <div class="d-flex flex-row justify-content-center">
       <div>
         <div class="input-group">
-          <input class="form-control" type="search" value="" id="example-search-input">
+          <input (keyup)="onKey($event)" class="form-control" type="search" id="example-search-input">
           <span class="input-group-btn">
-            <button class="btn btn-primary" id="search">Go</button>
+            <button (click)="search()" class="btn btn-primary" id="search">Go</button>
           </span>
         </div>
       </div>
