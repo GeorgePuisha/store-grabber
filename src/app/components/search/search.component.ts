@@ -12,7 +12,7 @@ import { HttpClient } from "@angular/common/http";
 })
 export class SearchComponent implements OnInit {
 
-  searchTerm: string;
+  query: string;
 
   constructor(public http: HttpClient) { }
 
@@ -20,7 +20,7 @@ export class SearchComponent implements OnInit {
   }
 
   private onKey(event: any) {
-    this.searchTerm = event.target.value;
+    this.query = event.target.value;
     if (event.keyCode == 13) {
       this.search();
     }
@@ -28,9 +28,9 @@ export class SearchComponent implements OnInit {
 
   private search() {
     this.http
-      .get(environment.API_URL + "search/" + this.searchTerm)
+      .get(environment.API_URL + "search/" + this.query)
       .subscribe((data) => {
-
+        console.log(data);
       });
   }
 
