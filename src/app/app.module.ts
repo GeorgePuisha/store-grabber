@@ -11,8 +11,10 @@ import { NavbarComponent } from "./components/navbar/navbar.component";
 import { FooterComponent } from "./components/footer/footer.component";
 import { GreetComponent } from "./components/greet/greet.component";
 import { ProfileComponent } from './components/profile/profile.component';
+import { SearchComponent } from './components/search/search.component';
 
 import { AuthService } from "./services/auth/auth.service";
+
 
 
 
@@ -22,14 +24,8 @@ import { AuthService } from "./services/auth/auth.service";
     NavbarComponent,
     FooterComponent,
     GreetComponent,
-    ProfileComponent
-  ],
-  exports: [
-    AppComponent,
-    NavbarComponent,
-    FooterComponent,
-    GreetComponent,
-    ProfileComponent
+    ProfileComponent,
+    SearchComponent
   ],
   imports: [
     BrowserModule,
