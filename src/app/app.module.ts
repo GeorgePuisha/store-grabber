@@ -14,6 +14,7 @@ import { ProfileComponent } from './components/profile/profile.component';
 import { SearchComponent } from './components/search/search.component';
 
 import { AuthService } from "./services/auth/auth.service";
+import { ProductComponent } from './components/product/product.component';
 
 @NgModule({
   declarations: [
@@ -22,7 +23,8 @@ import { AuthService } from "./services/auth/auth.service";
     FooterComponent,
     HomeComponent,
     ProfileComponent,
-    SearchComponent
+    SearchComponent,
+    ProductComponent
   ],
   imports: [
     BrowserModule,
