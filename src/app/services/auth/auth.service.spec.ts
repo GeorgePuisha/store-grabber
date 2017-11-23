@@ -11,6 +11,7 @@ import { HomeComponent } from "../../components/home/home.component";
 import { FooterComponent } from "../../components/footer/footer.component";
 import { ProfileComponent } from "../../components/profile/profile.component";
 import { SearchComponent } from "../../components/search/search.component";
+import { ProductComponent } from "../../components/product/product.component";
 
 import { HttpClientModule, HttpClient } from "@angular/common/http";
 
@@ -31,7 +32,8 @@ describe("AuthService", () => {
         HomeComponent,
         FooterComponent,
         ProfileComponent,
-        SearchComponent
+        SearchComponent,
+        ProductComponent
       ],
       imports: [
         HttpClientModule,
