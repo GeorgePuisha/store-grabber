@@ -1,6 +1,7 @@
 import { environment } from "../../../environments/environment";
 
 import { Component, OnInit, ViewEncapsulation } from "@angular/core";
+import { ProductComponent } from "../product/product.component";
 import 'rxjs/add/operator/map'
 
 import { HttpClient } from "@angular/common/http";
