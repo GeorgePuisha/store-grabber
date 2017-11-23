@@ -2,6 +2,7 @@ import { async, ComponentFixture, TestBed } from "@angular/core/testing";
 
 import { HomeComponent } from "./home.component";
 import { SearchComponent } from "../search/search.component";
+import { ProductComponent } from "../product/product.component";
 
 import { RouterTestingModule } from "@angular/router/testing";
 
@@ -18,7 +19,8 @@ describe("HomeComponent", () => {
     TestBed.configureTestingModule({
       declarations: [
         HomeComponent,
-        SearchComponent
+        SearchComponent,
+        ProductComponent
       ],
       imports: [
         HttpClientModule,

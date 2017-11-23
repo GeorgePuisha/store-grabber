@@ -1,6 +1,8 @@
 import { environment } from "../../../environments/environment";
 
 import { Component, OnInit, ViewEncapsulation } from "@angular/core";
+import { ProductComponent } from "../product/product.component";
+import { Product } from "../product";
 import 'rxjs/add/operator/map'
 
 import { HttpClient } from "@angular/common/http";
@@ -14,6 +16,8 @@ import { HttpClient } from "@angular/common/http";
 export class SearchComponent implements OnInit {
 
   query: string;
+  pagesLoaded: number = 0;
+  showedProducts: Product[] = [];
 
   constructor(public http: HttpClient) { }
 
@@ -28,10 +32,23 @@ export class SearchComponent implements OnInit {
   }
 
   public search() {
+    this.pagesLoaded = 1;
+    this.showedProducts = [];
+    this.loadPage(this.pagesLoaded);
+  }
+
+  public loadPage(pageToLoad: number) {
     this.http
-      .get(environment.API_URL + "search/" + this.query)
-      .map(data => JSON.stringify(data))
+      .get(environment.API_URL + "search/" + this.query + "/" + pageToLoad.toString())
+      .map((data) => JSON.stringify(data))
       .subscribe((data) => {
+        const page: Product[] = JSON.parse(data);
+        this.showedProducts = this.showedProducts.concat(page);
       });
+  }
+
+  public onScroll() {
+    this.pagesLoaded++;
+    this.loadPage(this.pagesLoaded);
   }
 }
