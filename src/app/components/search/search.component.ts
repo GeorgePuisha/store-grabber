@@ -1,6 +1,7 @@
 import { environment } from "../../../environments/environment";
 
 import { Component, OnInit, ViewEncapsulation } from "@angular/core";
+import 'rxjs/add/operator/map'
 
 import { HttpClient } from "@angular/common/http";
 
@@ -33,5 +34,4 @@ export class SearchComponent implements OnInit {
       .subscribe((data) => {
       });
   }
-
 }
