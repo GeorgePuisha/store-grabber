@@ -1,4 +1,5 @@
-import { Component, OnInit, ViewEncapsulation } from '@angular/core';
+import { Component, OnInit, ViewEncapsulation, Input } from '@angular/core';
+import { Product } from "../product";
 
 @Component({
   selector: 'app-product',
@@ -8,9 +9,12 @@ import { Component, OnInit, ViewEncapsulation } from '@angular/core';
 })
 export class ProductComponent implements OnInit {
 
+  @Input() showedProducts: Product[];
+
   constructor() { }
 
   ngOnInit() {
+    console.log(this.showedProducts);
   }
 
 }

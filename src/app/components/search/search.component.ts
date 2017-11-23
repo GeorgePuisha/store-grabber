@@ -2,6 +2,7 @@ import { environment } from "../../../environments/environment";
 
 import { Component, OnInit, ViewEncapsulation } from "@angular/core";
 import { ProductComponent } from "../product/product.component";
+import { Product } from "../product";
 import 'rxjs/add/operator/map'
 
 import { HttpClient } from "@angular/common/http";
@@ -51,13 +52,4 @@ export class SearchComponent implements OnInit {
     this.pagesLoaded++;
     this.loadPage(this.pagesLoaded);
   }
-}
-
-interface Product {
-  key: string,
-  name: string,
-  description: string,
-  image: string,
-  price: string,
-  status: string
 }
