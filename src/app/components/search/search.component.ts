@@ -1,6 +1,7 @@
 import { environment } from "../../../environments/environment";
 
 import { Component, OnInit, ViewEncapsulation } from "@angular/core";
+import 'rxjs/add/operator/map'
 
 import { HttpClient } from "@angular/common/http";
 
@@ -19,18 +20,18 @@ export class SearchComponent implements OnInit {
   ngOnInit() {
   }
 
-  private onKey(event: any) {
+  public onKey(event: any) {
     this.query = event.target.value;
     if (event.keyCode == 13) {
       this.search();
     }
   }
 
-  private search() {
+  public search() {
     this.http
       .get(environment.API_URL + "search/" + this.query)
+      .map(data => JSON.stringify(data))
       .subscribe((data) => {
       });
   }
-
 }
