@@ -44,7 +44,6 @@ export class SearchComponent implements OnInit {
       .subscribe((data) => {
         const page: Product[] = JSON.parse(data);
         this.showedProducts = this.showedProducts.concat(page);
-        console.log(this.showedProducts);
       });
   }
 

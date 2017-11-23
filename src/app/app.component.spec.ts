@@ -7,6 +7,7 @@ import { NavbarComponent } from "./components/navbar/navbar.component";
 import { FooterComponent } from "./components/footer/footer.component";
 import { HomeComponent } from "./components/home/home.component";
 import { SearchComponent } from './components/search/search.component';
+import { ProductComponent } from "./components/product/product.component";
 
 import { HttpClientModule, HttpClient } from "@angular/common/http";
 
@@ -20,7 +21,8 @@ describe("AppComponent", () => {
         NavbarComponent,
         FooterComponent,
         HomeComponent,
-        SearchComponent
+        SearchComponent,
+        ProductComponent
       ],
       imports: [
         HttpClientModule,
