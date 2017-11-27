@@ -1,6 +1,7 @@
 import { BrowserModule } from "@angular/platform-browser";
 import { NgModule } from "@angular/core";
 import { HttpClientModule } from "@angular/common/http";
+import { InfiniteScrollModule } from 'ngx-infinite-scroll';
 import "rxjs/Rx";
 
 import { routing, appRoutingProviders } from "./app.routing";
@@ -29,6 +30,7 @@ import { ProductComponent } from './components/product/product.component';
   imports: [
     BrowserModule,
     HttpClientModule,
+    InfiniteScrollModule,
     routing
   ],
   providers: [AuthService, appRoutingProviders],

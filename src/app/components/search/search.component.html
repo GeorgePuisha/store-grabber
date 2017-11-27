@@ -16,5 +16,5 @@
   </div>
 </div>
 <div class="d-flex justify-content-center">
-  <app-product [showedProducts]="showedProducts"></app-product>
+  <app-product [showedProducts]="showedProducts" infiniteScroll [infiniteScrollDistance]="1.5" [infiniteScrollThrottle]="50" (scrolled)="onScroll()"></app-product>
 </div>
