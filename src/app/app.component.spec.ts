@@ -1,6 +1,7 @@
 import { TestBed, async } from "@angular/core/testing";
 
 import { RouterTestingModule } from "@angular/router/testing";
+import { InfiniteScrollModule } from 'ngx-infinite-scroll';
 
 import { AppComponent } from "./app.component";
 import { NavbarComponent } from "./components/navbar/navbar.component";
@@ -26,7 +27,8 @@ describe("AppComponent", () => {
       ],
       imports: [
         HttpClientModule,
-        RouterTestingModule
+        RouterTestingModule,
+        InfiniteScrollModule
       ],
       providers: [
         AuthService,
