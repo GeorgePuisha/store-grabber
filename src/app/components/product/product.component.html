@@ -6,10 +6,10 @@
           <span class="badge badge-success">{{ product.status }}</span>
         </div>
         <div class="alert img-container">
-          <img class="img-responsive img-product" src="{{ product.image }}" alt="Card image cap">
+          <a href="{{ product.url }}"><img class="img-responsive img-product" src="{{ product.image }}" alt="Card image cap"></a>
         </div>
         <div class="card-body fixed-body">
-          <h4 class="card-title">{{ product.name }}</h4>
+          <a href="{{ product.url }}"><h4 class="card-title">{{ product.name }}</h4></a>
           <p class="card-text">{{ product.description }}</p>
         </div>
         <div class="card-footer">
