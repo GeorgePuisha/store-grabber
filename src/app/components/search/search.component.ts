@@ -19,6 +19,7 @@ export class SearchComponent implements OnInit {
   pagesMax: number = 0;
   pagesLoaded: number = 0;
   showedProducts: Product[] = [];
+  isFound: boolean = false;
 
   constructor(public http: HttpClient) { }
 
@@ -45,6 +46,7 @@ export class SearchComponent implements OnInit {
       .map((data) => JSON.stringify(data))
       .subscribe((data) => {
         this.pagesMax = parseInt(data);
+        this.pagesMax > 0 ? this.isFound = true : this.isFound = false;
       });
   }
 
