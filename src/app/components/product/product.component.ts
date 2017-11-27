@@ -31,12 +31,10 @@ export class ProductComponent implements OnInit {
   }
 
   public watch(product: Product) {
-    console.log(product);
     this.http
       .get(environment.API_URL + "watch/" + this.profile.name + "/" + product.key)
       .map((data) => JSON.stringify(data))
       .subscribe((data) => {
-
       });
   }
 
