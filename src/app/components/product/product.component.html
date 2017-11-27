@@ -17,7 +17,7 @@
             <div class="alert">
               <h5 class="text text-bold">{{ product.price }} BYN</h5>
             </div>
-            <div class="alert">
+            <div [hidden]="hiddenButtons[product.key]" class="alert">
               <a (click)="watch(product)" role="button" title="Add to watched"><i class="fa fa-eye fa-2x" aria-hidden="true"></i></a>
             </div>
           </div>

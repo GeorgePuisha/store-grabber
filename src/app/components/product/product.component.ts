@@ -16,6 +16,7 @@ import { AuthService } from "../../services/auth/auth.service";
 export class ProductComponent implements OnInit {
 
   profile: any;
+  hiddenButtons: any[] = [];
   @Input() showedProducts: Product[];
 
   constructor(public http: HttpClient, public auth: AuthService) { }
@@ -36,6 +37,7 @@ export class ProductComponent implements OnInit {
       .map((data) => JSON.stringify(data))
       .subscribe((data) => {
       });
+    this.hiddenButtons[product.key] = true;
   }
 
 }
