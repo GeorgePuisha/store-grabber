@@ -10,7 +10,7 @@ import * as auth0 from "auth0-js";
 @Injectable()
 export class AuthService {
 
-  userProfile: any;
+  userProfile: any = {};
 
   auth0 = new auth0.WebAuth({
     clientID: environment.CLIENT_ID,
