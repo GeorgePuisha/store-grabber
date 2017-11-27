@@ -4,9 +4,9 @@ import { HomeComponent } from "./home.component";
 import { SearchComponent } from "../search/search.component";
 import { ProductComponent } from "../product/product.component";
 
-import { RouterTestingModule } from "@angular/router/testing";
-
 import { HttpClientModule, HttpClient } from "@angular/common/http";
+import { RouterTestingModule } from "@angular/router/testing";
+import { InfiniteScrollModule } from 'ngx-infinite-scroll';
 
 import { AuthService } from "../../services/auth/auth.service";
 
@@ -24,7 +24,8 @@ describe("HomeComponent", () => {
       ],
       imports: [
         HttpClientModule,
-        RouterTestingModule
+        RouterTestingModule,
+        InfiniteScrollModule
       ],
       providers: [
         AuthService,

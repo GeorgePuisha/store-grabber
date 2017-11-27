@@ -3,6 +3,7 @@ import { TestBed, inject, fakeAsync, tick } from "@angular/core/testing";
 
 import { Router } from "@angular/router";
 import { RouterTestingModule } from "@angular/router/testing";
+import { InfiniteScrollModule } from 'ngx-infinite-scroll';
 import { appRoutes } from "../../app.routing";
 
 import { AppComponent } from "../../app.component";
@@ -37,7 +38,8 @@ describe("AuthService", () => {
       ],
       imports: [
         HttpClientModule,
-        RouterTestingModule.withRoutes(appRoutes)
+        RouterTestingModule.withRoutes(appRoutes),
+        InfiniteScrollModule
       ],
       providers: [
         AuthService,

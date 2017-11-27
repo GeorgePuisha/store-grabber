@@ -1,3 +1,13 @@
 .fixed-body {
   height: 17em;
 }
+
+.img-container {
+  height: 120px;
+}
+
+.img-product {
+  max-width: 100%;
+  max-height: 120px;
+  width: auto;
+}

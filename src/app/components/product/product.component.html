@@ -1,24 +1,29 @@
 <div class="jumbotron">
+  <div class="d-flex justify-content-center">
+    <div class="alert">
+      <h4 class="text text-primary">Search results:</h4>
+    </div>
+  </div>
   <div class="row text-center">
-    <div class="col-sm-6 col-md-4 col-lg-3" *ngFor="let product of showedProducts">
+    <div class="col-sm-6 col-md-4 col-lg-3 alert" *ngFor="let product of showedProducts">
       <div class="card">
         <div class="alert">
           <span class="badge badge-success">{{ product.status }}</span>
         </div>
-        <div class="alert">
-          <img class="img-responsive" width="auto" height="120" src="{{ product.image }}" alt="Card image cap">
+        <div class="alert img-container">
+          <a href="{{ product.url }}"><img class="img-responsive img-product" src="{{ product.image }}" alt="Card image cap"></a>
         </div>
         <div class="card-body fixed-body">
-          <h4 class="card-title">{{ product.name }}</h4>
+          <a href="{{ product.url }}"><h4 class="card-title">{{ product.name }}</h4></a>
           <p class="card-text">{{ product.description }}</p>
         </div>
         <div class="card-footer">
           <div class="d-flex justify-content-around">
-            <div class="alert">
+            <div class="container">
               <h5 class="text text-bold">{{ product.price }} BYN</h5>
             </div>
-            <div class="alert">
-
+            <div [hidden]="hiddenButtons[product.key]" class="">
+              <a (click)="watch(product)" role="button" title="Add to watched"><i class="fa fa-eye" aria-hidden="true"></i></a>
             </div>
           </div>
         </div>

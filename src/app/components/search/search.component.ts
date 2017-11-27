@@ -16,8 +16,10 @@ import { HttpClient } from "@angular/common/http";
 export class SearchComponent implements OnInit {
 
   query: string;
+  pagesMax: number = 0;
   pagesLoaded: number = 0;
   showedProducts: Product[] = [];
+  isFound: boolean = false;
 
   constructor(public http: HttpClient) { }
 
@@ -32,23 +34,37 @@ export class SearchComponent implements OnInit {
   }
 
   public search() {
-    this.pagesLoaded = 1;
     this.showedProducts = [];
-    this.loadPage(this.pagesLoaded);
+    this.pagesLoaded = 0;
+    this.getPageAmount();
+    this.loadPage();
   }
 
-  public loadPage(pageToLoad: number) {
+  public getPageAmount() {
+    this.http
+      .get(environment.API_URL + "search/" + this.query + "/last")
+      .map((data) => JSON.stringify(data))
+      .subscribe((data) => {
+        this.pagesMax = parseInt(data);
+        this.pagesMax > 0 ? this.isFound = true : this.isFound = false;
+      });
+  }
+
+  public loadPage() {
+    const pageToLoad: number = this.pagesLoaded + 1;
     this.http
       .get(environment.API_URL + "search/" + this.query + "/" + pageToLoad.toString())
       .map((data) => JSON.stringify(data))
       .subscribe((data) => {
         const page: Product[] = JSON.parse(data);
+        this.pagesLoaded++;
         this.showedProducts = this.showedProducts.concat(page);
       });
   }
 
   public onScroll() {
-    this.pagesLoaded++;
-    this.loadPage(this.pagesLoaded);
+    if (this.pagesLoaded < this.pagesMax) {
+      this.loadPage();
+    }
   }
 }
