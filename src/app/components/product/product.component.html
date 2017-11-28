@@ -17,6 +17,9 @@
       <div *ngIf="canBeWatched">
         <a (click)="watch(product)" role="button" title="Add to watched"><i class="fa fa-eye" aria-hidden="true"></i></a>
       </div>
+      <div *ngIf="!canBeWatched">
+        <a (click)="unwatch(product)" role="button" title="Stop watching"><i class="fa fa-eye-slash" aria-hidden="true"></i></a>
+      </div>
     </div>
   </div>
 </div>

@@ -40,4 +40,13 @@ export class ProductComponent implements OnInit {
     this.canBeWatched = false;
   }
 
+  public unwatch(product: Product) {
+    this.http
+      .get(environment.API_URL + "unwatch/" + product.key)
+      .map((data) => JSON.stringify(data))
+      .subscribe((data) => {
+      });
+    this.canBeWatched = true;
+  }
+
 }
