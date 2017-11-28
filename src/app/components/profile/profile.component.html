@@ -10,5 +10,5 @@
       <h4>{{ profile?.name }}</h4>
     </div>
   </div>
-  <app-product [showedProducts]="showedProducts" infiniteScroll [infiniteScrollDistance]="1.5" [infiniteScrollThrottle]="50" (scrolled)="onScroll()"></app-product>
+  <app-product-list [showedProducts]="showedProducts" [title]="title"></app-product-list>
 </div>

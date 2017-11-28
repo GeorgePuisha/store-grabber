@@ -13,6 +13,7 @@ import { Product } from "../product";
 export class ProfileComponent implements OnInit {
 
   profile: any;
+  title: string = "Watched goods:"
   showedProducts: Product[] = [];
 
   constructor(public auth: AuthService, public http: HttpClient) { }
