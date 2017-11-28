@@ -31,6 +31,7 @@ export class ProfileComponent implements OnInit {
   ngOnInit() {
     this.auth.getProfile((err, profile) => {
       this.profile = profile;
+      console.log(profile);
       this.getAllWatched();
     });
   }
