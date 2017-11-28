@@ -13,6 +13,7 @@ import { Product } from "../product";
 export class ProductListComponent implements OnInit {
 
   @Input() title: string;
+  @Input() canBeWatched: boolean;
   @Input() showedProducts: Product[];
 
   constructor() { }

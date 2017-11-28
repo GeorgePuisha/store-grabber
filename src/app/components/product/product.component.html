@@ -14,7 +14,7 @@
       <div class="container">
         <h5 class="text text-bold">{{ product.price }} BYN</h5>
       </div>
-      <div>
+      <div *ngIf="canBeWatched">
         <a (click)="watch(product)" role="button" title="Add to watched"><i class="fa fa-eye" aria-hidden="true"></i></a>
       </div>
     </div>

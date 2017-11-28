@@ -15,8 +15,9 @@ import { AuthService } from "../../services/auth/auth.service";
 })
 export class ProductComponent implements OnInit {
 
-  @Input() product: Product;
   profile: any;
+  @Input() product: Product;
+  @Input() canBeWatched: boolean = true;
 
   constructor(public http: HttpClient, public auth: AuthService) { }
 
@@ -36,6 +37,7 @@ export class ProductComponent implements OnInit {
       .map((data) => JSON.stringify(data))
       .subscribe((data) => {
       });
+    this.canBeWatched = false;
   }
 
 }
