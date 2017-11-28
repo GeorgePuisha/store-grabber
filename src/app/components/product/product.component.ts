@@ -1,6 +1,6 @@
 import { environment } from "../../../environments/environment";
 
-import { Component, OnInit, ViewEncapsulation, Input } from '@angular/core';
+import { Component, OnInit, ViewEncapsulation, Input } from "@angular/core";
 import { Product } from "../product";
 
 import { HttpClient } from "@angular/common/http";
@@ -8,9 +8,9 @@ import { HttpClient } from "@angular/common/http";
 import { AuthService } from "../../services/auth/auth.service";
 
 @Component({
-  selector: 'app-product',
-  templateUrl: './product.component.html',
-  styleUrls: ['./product.component.css'],
+  selector: "app-product",
+  templateUrl: "./product.component.html",
+  styleUrls: ["./product.component.css"],
   encapsulation: ViewEncapsulation.None
 })
 export class ProductComponent implements OnInit {

@@ -1,10 +1,11 @@
 import { async, ComponentFixture, TestBed } from "@angular/core/testing";
 
 import { HttpClientModule, HttpClient } from "@angular/common/http";
-import { InfiniteScrollModule } from 'ngx-infinite-scroll';
+import { InfiniteScrollModule } from "ngx-infinite-scroll";
 
 import { SearchComponent } from "./search.component";
 import { ProductComponent } from "../product/product.component";
+import { ProductListComponent } from "../product-list/product-list.component";
 
 describe("SearchComponent", () => {
   let component: SearchComponent;
@@ -14,7 +15,8 @@ describe("SearchComponent", () => {
     TestBed.configureTestingModule({
       declarations: [
         SearchComponent,
-        ProductComponent
+        ProductComponent,
+        ProductListComponent
       ],
       imports: [
         HttpClientModule,
