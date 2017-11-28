@@ -1,6 +1,6 @@
 import { environment } from "../../../environments/environment";
 
-import { Component, OnInit, ViewEncapsulation, Input } from '@angular/core';
+import { Component, OnInit, ViewEncapsulation, Input } from "@angular/core";
 import { Product } from "../product";
 
 import { HttpClient } from "@angular/common/http";
@@ -8,16 +8,16 @@ import { HttpClient } from "@angular/common/http";
 import { AuthService } from "../../services/auth/auth.service";
 
 @Component({
-  selector: 'app-product',
-  templateUrl: './product.component.html',
-  styleUrls: ['./product.component.css'],
+  selector: "app-product",
+  templateUrl: "./product.component.html",
+  styleUrls: ["./product.component.css"],
   encapsulation: ViewEncapsulation.None
 })
 export class ProductComponent implements OnInit {
 
   profile: any;
-  hiddenButtons: any[] = [];
-  @Input() showedProducts: Product[];
+  @Input() product: Product;
+  @Input() canBeWatched: boolean = true;
 
   constructor(public http: HttpClient, public auth: AuthService) { }
 
@@ -37,7 +37,16 @@ export class ProductComponent implements OnInit {
       .map((data) => JSON.stringify(data))
       .subscribe((data) => {
       });
-    this.hiddenButtons[product.key] = true;
+    this.canBeWatched = false;
+  }
+
+  public unwatch(product: Product) {
+    this.http
+      .get(environment.API_URL + "unwatch/" + product.key)
+      .map((data) => JSON.stringify(data))
+      .subscribe((data) => {
+      });
+    this.canBeWatched = true;
   }
 
 }

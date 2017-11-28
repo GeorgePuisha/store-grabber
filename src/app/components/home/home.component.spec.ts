@@ -3,10 +3,11 @@ import { async, ComponentFixture, TestBed } from "@angular/core/testing";
 import { HomeComponent } from "./home.component";
 import { SearchComponent } from "../search/search.component";
 import { ProductComponent } from "../product/product.component";
+import { ProductListComponent } from "../product-list/product-list.component";
 
 import { HttpClientModule, HttpClient } from "@angular/common/http";
 import { RouterTestingModule } from "@angular/router/testing";
-import { InfiniteScrollModule } from 'ngx-infinite-scroll';
+import { InfiniteScrollModule } from "ngx-infinite-scroll";
 
 import { AuthService } from "../../services/auth/auth.service";
 
@@ -20,7 +21,8 @@ describe("HomeComponent", () => {
       declarations: [
         HomeComponent,
         SearchComponent,
-        ProductComponent
+        ProductComponent,
+        ProductListComponent
       ],
       imports: [
         HttpClientModule,

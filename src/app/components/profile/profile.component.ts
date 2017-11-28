@@ -1,5 +1,9 @@
+import { environment } from "../../../environments/environment";
+
 import { Component, OnInit } from "@angular/core";
 import { AuthService } from "../../services/auth/auth.service";
+import { HttpClient } from "@angular/common/http";
+import { Product } from "../product";
 
 @Component({
   selector: "app-profile",
@@ -9,16 +13,26 @@ import { AuthService } from "../../services/auth/auth.service";
 export class ProfileComponent implements OnInit {
 
   profile: any;
+  title: string = "Watched goods:"
+  showedProducts: Product[] = [];
 
-  constructor(public auth: AuthService) { }
+  constructor(public auth: AuthService, public http: HttpClient) { }
+
+  public getAllWatched() {
+    this.http
+      .get(environment.API_URL + "watched/" + this.profile.name)
+      .map((data) => JSON.stringify(data))
+      .subscribe((data) => {
+        this.showedProducts = JSON.parse(data);
+        console.log(this.showedProducts);
+      });
+  }
 
   ngOnInit() {
-    if (this.auth.userProfile) {
-      this.profile = this.auth.userProfile;
-    } else {
-      this.auth.getProfile((err, profile) => {
-        this.profile = profile;
-      });
-    }
+    this.auth.getProfile((err, profile) => {
+      this.profile = profile;
+      console.log(profile);
+      this.getAllWatched();
+    });
   }
 }

@@ -3,7 +3,7 @@ import { TestBed, inject, fakeAsync, tick } from "@angular/core/testing";
 
 import { Router } from "@angular/router";
 import { RouterTestingModule } from "@angular/router/testing";
-import { InfiniteScrollModule } from 'ngx-infinite-scroll';
+import { InfiniteScrollModule } from "ngx-infinite-scroll";
 import { appRoutes } from "../../app.routing";
 
 import { AppComponent } from "../../app.component";
@@ -13,6 +13,7 @@ import { FooterComponent } from "../../components/footer/footer.component";
 import { ProfileComponent } from "../../components/profile/profile.component";
 import { SearchComponent } from "../../components/search/search.component";
 import { ProductComponent } from "../../components/product/product.component";
+import { ProductListComponent } from "../../components/product-list/product-list.component";
 
 import { HttpClientModule, HttpClient } from "@angular/common/http";
 
@@ -34,7 +35,8 @@ describe("AuthService", () => {
         FooterComponent,
         ProfileComponent,
         SearchComponent,
-        ProductComponent
+        ProductComponent,
+        ProductListComponent
       ],
       imports: [
         HttpClientModule,

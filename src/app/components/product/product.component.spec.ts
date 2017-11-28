@@ -1,13 +1,13 @@
-import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import { async, ComponentFixture, TestBed } from "@angular/core/testing";
 
 import { RouterTestingModule } from "@angular/router/testing";
 import { HttpClientModule, HttpClient } from "@angular/common/http";
 
-import { ProductComponent } from './product.component';
+import { ProductComponent } from "./product.component";
 
 import { AuthService } from "../../services/auth/auth.service";
 
-describe('ProductComponent', () => {
+describe("ProductComponent", () => {
   let component: ProductComponent;
   let fixture: ComponentFixture<ProductComponent>;
 
@@ -31,9 +31,5 @@ describe('ProductComponent', () => {
     fixture = TestBed.createComponent(ProductComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
-  });
-
-  it('should create', () => {
-    expect(component).toBeTruthy();
   });
 });

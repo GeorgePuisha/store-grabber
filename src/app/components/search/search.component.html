@@ -16,5 +16,5 @@
   </div>
 </div>
 <div class="d-flex justify-content-center">
-  <app-product *ngIf="isFound" [showedProducts]="showedProducts" infiniteScroll [infiniteScrollDistance]="1.5" [infiniteScrollThrottle]="50" (scrolled)="onScroll()"></app-product>
+  <app-product-list *ngIf="isFound" [showedProducts]="showedProducts" [title]="title" [canBeWatched]=true infiniteScroll [infiniteScrollDistance]="1.5" [infiniteScrollThrottle]="50" (scrolled)="onScroll()"></app-product-list>
 </div>
