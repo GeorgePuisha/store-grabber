@@ -17,6 +17,7 @@ export class ProductComponent implements OnInit {
 
   profile: any;
   hiddenButtons: any[] = [];
+  @Input() title: string;
   @Input() showedProducts: Product[];
 
   constructor(public http: HttpClient, public auth: AuthService) { }
