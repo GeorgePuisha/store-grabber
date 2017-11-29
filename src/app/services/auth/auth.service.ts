@@ -69,6 +69,7 @@ export class AuthService {
     this.auth0.client.userInfo(accessToken, (err, profile) => {
       if (profile) {
         self.userProfile = profile;
+        profile.email ? self.userProfile.email = profile.email : self.userProfile.email = profile.sub;
       }
       watchProfile(err, profile);
     });
