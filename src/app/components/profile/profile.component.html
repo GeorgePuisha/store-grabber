@@ -1,4 +1,4 @@
-<div class="d-flex justify-content-center" *ngIf="auth.isAuthenticated()">
+<div class="d-flex justify-content-left" *ngIf="auth.isAuthenticated()">
   <div class="jumbotron">
     <div class="alert text-center">
       <h2>{{ profile?.nickname }}</h2>
@@ -10,5 +10,5 @@
       <h4>{{ profile?.name }}</h4>
     </div>
   </div>
-  <app-product-list [showedProducts]="showedProducts" [title]="title" [canBeWatched]=false></app-product-list>
+  <app-product-list class="container-fluid" [showedProducts]="showedProducts" [title]="title" [canBeWatched]=false></app-product-list>
 </div>
