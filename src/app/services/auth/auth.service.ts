@@ -18,7 +18,7 @@ export class AuthService {
     responseType: "token id_token",
     audience: "https://store-grabber.eu.auth0.com/userinfo",
     redirectUri: environment.URL,
-    scope: "openid  profile"
+    scope: "openid email profile"
   });
 
   constructor(public router: Router, public http: HttpClient) { }
@@ -58,7 +58,7 @@ export class AuthService {
   private saveUser(auth) {
     auth.getProfile((err, profile) => {
       this.http
-        .post(environment.API_URL + "login/", { email: profile.name, nickname: profile.nickname })
+        .post(environment.API_URL + "login/", { email: profile.email, nickname: profile.nickname })
         .subscribe();
     });
   }

@@ -33,7 +33,7 @@ export class ProductComponent implements OnInit {
 
   public watch(product: Product) {
     this.http
-      .get(environment.API_URL + "watch/" + this.profile.name + "/" + product.key)
+      .get(environment.API_URL + "watch/" + this.profile.email + "/" + product.key)
       .map((data) => JSON.stringify(data))
       .subscribe((data) => {
       });
