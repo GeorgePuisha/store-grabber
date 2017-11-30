@@ -2,6 +2,7 @@ import { ModuleWithProviders } from "@angular/core";
 import { Routes, RouterModule } from "@angular/router";
 import { HomeComponent } from "./components/home/home.component";
 import { ProfileComponent } from "./components/profile/profile.component";
+import { ProductWatchedComponent } from "./components/product-watched/product-watched.component";
 
 export const appRoutes: Routes = [
   {
@@ -11,6 +12,10 @@ export const appRoutes: Routes = [
   {
     path: "profile",
     component: ProfileComponent
+  },
+  {
+    path: "profile/watched/:key",
+    component: ProductWatchedComponent
   }
 ];
 

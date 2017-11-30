@@ -1,4 +1,8 @@
 import { Component, OnInit, ViewEncapsulation } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
+import { HttpClient } from '@angular/common/http';
+
+import { AuthService } from "../../services/auth/auth.service";
 
 @Component({
   selector: 'app-product-watched',
@@ -8,7 +12,13 @@ import { Component, OnInit, ViewEncapsulation } from '@angular/core';
 })
 export class ProductWatchedComponent implements OnInit {
 
-  constructor() { }
+  key: string;
+
+  constructor(private route: ActivatedRoute, private http: HttpClient, public auth: AuthService) {
+    this.route.params.subscribe(params => {
+      this.key = params.key;
+    });
+  }
 
   ngOnInit() {
   }
