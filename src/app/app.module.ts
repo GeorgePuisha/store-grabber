@@ -1,7 +1,9 @@
-import { BrowserModule } from "@angular/platform-browser";
 import { NgModule } from "@angular/core";
+import { BrowserModule } from "@angular/platform-browser";
+import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
 import { HttpClientModule } from "@angular/common/http";
 import { InfiniteScrollModule } from "ngx-infinite-scroll";
+import { NgxChartsModule } from "@swimlane/ngx-charts";
 import "rxjs/Rx";
 
 import { routing, appRoutingProviders } from "./app.routing";
@@ -33,8 +35,10 @@ import { ProductWatchedComponent } from './components/product-watched/product-wa
   ],
   imports: [
     BrowserModule,
+    BrowserAnimationsModule,
     HttpClientModule,
     InfiniteScrollModule,
+    NgxChartsModule,
     routing
   ],
   providers: [AuthService, appRoutingProviders],
