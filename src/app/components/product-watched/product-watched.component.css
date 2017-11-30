@@ -1,0 +1,20 @@
+.product {
+  width: 80%;
+}
+
+.product-title-container {
+  margin-top: 3em;
+  margin-bottom: 3em;
+}
+
+.product-img-container {
+  height: 240px;
+  margin-left: 4em;
+  margin-right: 2em;
+}
+
+.product-description-container {
+  height: 240px;
+  margin-left: 4em;
+  margin-right: 2em;
+}

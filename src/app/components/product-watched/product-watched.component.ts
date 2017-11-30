@@ -1,3 +1,5 @@
+import { environment } from "../../../environments/environment";
+
 import { Component, OnInit, ViewEncapsulation } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { HttpClient } from '@angular/common/http';
@@ -12,11 +14,19 @@ import { AuthService } from "../../services/auth/auth.service";
 })
 export class ProductWatchedComponent implements OnInit {
 
-  key: string;
+  product: any = {};
+  lastPrice: string;
+  currency: string = "BYN";
 
   constructor(private route: ActivatedRoute, private http: HttpClient, public auth: AuthService) {
     this.route.params.subscribe(params => {
-      this.key = params.key;
+      this.http
+        .get(environment.API_URL + "watched/" + params.key)
+        .map((data) => JSON.stringify(data))
+        .subscribe((data) => {
+          this.product = JSON.parse(data);
+          this.lastPrice = this.product.price[this.product.price.length - 1]
+        });
     });
   }
 
