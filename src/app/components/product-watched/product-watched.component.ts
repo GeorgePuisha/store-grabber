@@ -14,6 +14,7 @@ import { AuthService } from "../../services/auth/auth.service";
 })
 export class ProductWatchedComponent implements OnInit {
 
+  profile: any;
   product: any = {};
   lastPrice: string;
   currency: string = "BYN";
@@ -63,16 +64,19 @@ export class ProductWatchedComponent implements OnInit {
   }
 
   constructor(private route: ActivatedRoute, private http: HttpClient, public auth: AuthService) {
-    this.route.params.subscribe(params => {
-      this.http
-        .get(environment.API_URL + "watched/" + params.key)
-        .map((data) => JSON.stringify(data))
-        .subscribe((data) => {
-          this.product = JSON.parse(data);
-          this.lastPrice = this.product.price[this.product.price.length - 1];
-          this.parseData(this.product);
-          this.visible = true;
-        });
+    this.auth.getProfile((err, profile) => {
+      this.profile = profile;
+      this.route.params.subscribe(params => {
+        this.http
+          .get(environment.API_URL + "watched/" + params.key + "/" + this.profile.email)
+          .map((data) => JSON.stringify(data))
+          .subscribe((data) => {
+            this.product = JSON.parse(data);
+            this.lastPrice = this.product.price[this.product.price.length - 1];
+            this.parseData(this.product);
+            this.visible = true;
+          });
+      });
     });
   }
 
