@@ -1,4 +1,4 @@
-<div class="d-flex justify-content-center" *ngIf="auth.isAuthenticated()">
+<div class="d-flex justify-content-center" *ngIf="auth.isAuthenticated() && visible">
   <div class="d-flex justify-content-left flex-column product">
     <div class="product-title-container jumbotron">
       <h1><a href="{{ product.url }}">{{ product.name }}</a></h1>
@@ -20,7 +20,7 @@
     </div>
     <div class="container-fluid jumbotron">
       <div class="d-flex justify-content-center">
-        <ngx-charts-line-chart *ngIf="visible" [results]="priceData" [view]="view" [scheme]="colorScheme" [gradient]="gradient" [xAxis]="showXAxis" [yAxis]="showYAxis" [legend]="false" [showXAxisLabel]="showXAxisLabel" [showYAxisLabel]="showYAxisLabel" [xAxisLabel]="xAxisLabel"
+        <ngx-charts-line-chart [results]="priceData" [view]="view" [scheme]="colorScheme" [gradient]="gradient" [xAxis]="showXAxis" [yAxis]="showYAxis" [legend]="false" [showXAxisLabel]="showXAxisLabel" [showYAxisLabel]="showYAxisLabel" [xAxisLabel]="xAxisLabel"
             [yAxisLabel]="yAxisLabel" [autoScale]="autoScale">
         </ngx-charts-line-chart>
       </div>

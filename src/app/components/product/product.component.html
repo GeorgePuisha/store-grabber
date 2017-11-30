@@ -11,6 +11,9 @@
   </div>
   <div class="card-footer">
     <div class="d-flex justify-content-around">
+      <div *ngIf="!canBeWatched">
+        <a routerLink="/profile/watched/{{ product.key }}" role="button" title="Watch price changing"><i class="fa fa-line-chart" aria-hidden="true"></i></a>
+      </div>
       <div class="container">
         <h5 class="text text-bold">{{ product.price }} BYN</h5>
       </div>
