@@ -1,7 +1,9 @@
-import { BrowserModule } from "@angular/platform-browser";
 import { NgModule } from "@angular/core";
+import { BrowserModule } from "@angular/platform-browser";
+import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
 import { HttpClientModule } from "@angular/common/http";
 import { InfiniteScrollModule } from "ngx-infinite-scroll";
+import { NgxChartsModule } from "@swimlane/ngx-charts";
 import "rxjs/Rx";
 
 import { routing, appRoutingProviders } from "./app.routing";
@@ -17,6 +19,7 @@ import { SearchComponent } from "./components/search/search.component";
 import { AuthService } from "./services/auth/auth.service";
 import { ProductComponent } from "./components/product/product.component";
 import { ProductListComponent } from "./components/product-list/product-list.component";
+import { ProductWatchedComponent } from "./components/product-watched/product-watched.component";
 
 @NgModule({
   declarations: [
@@ -27,12 +30,15 @@ import { ProductListComponent } from "./components/product-list/product-list.com
     ProfileComponent,
     SearchComponent,
     ProductComponent,
-    ProductListComponent
+    ProductListComponent,
+    ProductWatchedComponent
   ],
   imports: [
     BrowserModule,
+    BrowserAnimationsModule,
     HttpClientModule,
     InfiniteScrollModule,
+    NgxChartsModule,
     routing
   ],
   providers: [AuthService, appRoutingProviders],

@@ -1,0 +1,29 @@
+<div class="d-flex justify-content-center" *ngIf="auth.isAuthenticated() && visible">
+  <div class="d-flex justify-content-left flex-column product">
+    <div class="product-title-container jumbotron">
+      <h1><a href="{{ product.url }}">{{ product.name }}</a></h1>
+    </div>
+    <div class="alert d-flex justify-content-left">
+      <div class="alert product-img-container">
+        <a href="{{ product.url }}"><img class="img-responsive img-product" src="{{ product.image }}" alt="Card image cap"></a>
+      </div>
+      <div class="alert product-description-container">
+        <div class="alert">
+          <h4>Description:</h4>
+          <h5>{{ product.description }}</h5>
+        </div>
+        <div class="alert">
+          <h4>Last price:</h4>
+          <h1 class="text text-success">{{ lastPrice }} {{ currency }}</h1>
+        </div>
+      </div>
+    </div>
+    <div class="container-fluid jumbotron">
+      <div class="d-flex justify-content-center">
+        <ngx-charts-line-chart [results]="priceData" [view]="view" [scheme]="colorScheme" [gradient]="gradient" [xAxis]="showXAxis" [yAxis]="showYAxis" [legend]="false" [showXAxisLabel]="showXAxisLabel" [showYAxisLabel]="showYAxisLabel" [xAxisLabel]="xAxisLabel"
+            [yAxisLabel]="yAxisLabel" [autoScale]="autoScale">
+        </ngx-charts-line-chart>
+      </div>
+    </div>
+  </div>
+</div>

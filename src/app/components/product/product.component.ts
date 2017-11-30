@@ -42,7 +42,7 @@ export class ProductComponent implements OnInit {
 
   public unwatch(product: Product) {
     this.http
-      .get(environment.API_URL + "unwatch/" + product.key)
+      .get(environment.API_URL + "unwatch/" + this.profile.email + "/" + product.key)
       .map((data) => JSON.stringify(data))
       .subscribe((data) => {
       });

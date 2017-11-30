@@ -20,7 +20,7 @@ export class ProfileComponent implements OnInit {
 
   public getAllWatched() {
     this.http
-      .get(environment.API_URL + "watched/" + this.profile.email)
+      .get(environment.API_URL + "watched/all/" + this.profile.email)
       .map((data) => JSON.stringify(data))
       .subscribe((data) => {
         this.showedProducts = JSON.parse(data);
