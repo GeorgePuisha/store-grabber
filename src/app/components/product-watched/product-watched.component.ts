@@ -1,4 +1,5 @@
 import { environment } from "../../../environments/environment";
+import * as moment from 'moment';
 
 import { Component, OnInit, ViewEncapsulation } from "@angular/core";
 import { ActivatedRoute } from "@angular/router";
@@ -36,19 +37,15 @@ export class ProductWatchedComponent implements OnInit {
 
   visible: boolean = false;
 
-  public buildDateString(date: Date) {
-    return date.getUTCDate().toString() + "." + (date.getUTCMonth() + 1).toString() + "." + date.getUTCFullYear().toString();
-  }
-
   public createSeries(product) {
     let series: object[] = [];
-    let date: Date = new Date(Date.parse(product.createdAt));
+    let date = moment(product.createdAt).format("DD.MM.YYYY");
     product.price.forEach(price => {
       let point: object = {
         value: parseInt(price),
-        name: this.buildDateString(date)
+        name: date
       };
-      date.setDate(date.getDate() + 1);
+      date = moment().add(1, "days").format("DD.MM.YYYY");
       series.push(point);
     });
     return series;
