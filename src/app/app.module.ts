@@ -19,7 +19,7 @@ import { SearchComponent } from "./components/search/search.component";
 import { AuthService } from "./services/auth/auth.service";
 import { ProductComponent } from "./components/product/product.component";
 import { ProductListComponent } from "./components/product-list/product-list.component";
-import { ProductWatchedComponent } from './components/product-watched/product-watched.component';
+import { ProductWatchedComponent } from "./components/product-watched/product-watched.component";
 
 @NgModule({
   declarations: [

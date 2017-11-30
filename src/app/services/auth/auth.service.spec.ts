@@ -1,7 +1,7 @@
 import { Location } from "@angular/common";
 import { TestBed, inject, fakeAsync, tick } from "@angular/core/testing";
 
-import { APP_BASE_HREF } from '@angular/common';
+import { APP_BASE_HREF } from "@angular/common";
 import { Router } from "@angular/router";
 import { RouterTestingModule } from "@angular/router/testing";
 import { InfiniteScrollModule } from "ngx-infinite-scroll";
@@ -15,7 +15,7 @@ import { ProfileComponent } from "../../components/profile/profile.component";
 import { SearchComponent } from "../../components/search/search.component";
 import { ProductComponent } from "../../components/product/product.component";
 import { ProductListComponent } from "../../components/product-list/product-list.component";
-import { ProductWatchedComponent } from '../../components/product-watched/product-watched.component';
+import { ProductWatchedComponent } from "../../components/product-watched/product-watched.component";
 
 import { NgxChartsModule } from "@swimlane/ngx-charts";
 import { HttpClientModule, HttpClient } from "@angular/common/http";
@@ -50,7 +50,7 @@ describe("AuthService", () => {
       ],
       providers: [
         AuthService,
-        { provide: APP_BASE_HREF, useValue: '/' }
+        { provide: APP_BASE_HREF, useValue: "/" }
       ]
     });
 

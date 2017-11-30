@@ -1,6 +1,6 @@
 import { async, ComponentFixture, TestBed } from "@angular/core/testing";
 
-import { APP_BASE_HREF } from '@angular/common';
+import { APP_BASE_HREF } from "@angular/common";
 import { Router } from "@angular/router";
 import { RouterTestingModule } from "@angular/router/testing";
 import { appRoutes } from "../../app.routing";
@@ -14,7 +14,7 @@ import { ProductComponent } from "../product/product.component";
 import { ProductListComponent } from "../product-list/product-list.component";
 import { HomeComponent } from "../home/home.component";
 import { ProfileComponent } from "../profile/profile.component";
-import { ProductWatchedComponent } from '../product-watched/product-watched.component';
+import { ProductWatchedComponent } from "../product-watched/product-watched.component";
 
 describe("SearchComponent", () => {
   let component: SearchComponent;
@@ -37,7 +37,7 @@ describe("SearchComponent", () => {
         NgxChartsModule
       ],
       providers: [
-        { provide: APP_BASE_HREF, useValue: '/' }
+        { provide: APP_BASE_HREF, useValue: "/" }
       ]
     })
       .compileComponents();

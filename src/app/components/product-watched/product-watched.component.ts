@@ -25,9 +25,9 @@ export class ProductWatchedComponent implements OnInit {
   gradient = false;
   showLegend = false;
   showXAxisLabel = true;
-  xAxisLabel = 'Day';
+  xAxisLabel = "Day";
   showYAxisLabel = true;
-  yAxisLabel = 'Price';
+  yAxisLabel = "Price";
   timeline = true;
   autoScale = true;
   colorScheme = {
