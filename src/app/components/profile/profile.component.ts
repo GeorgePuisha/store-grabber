@@ -20,18 +20,16 @@ export class ProfileComponent implements OnInit {
 
   public getAllWatched() {
     this.http
-      .get(environment.API_URL + "watched/" + this.profile.name)
+      .get(environment.API_URL + "watched/" + this.profile.email)
       .map((data) => JSON.stringify(data))
       .subscribe((data) => {
         this.showedProducts = JSON.parse(data);
-        console.log(this.showedProducts);
       });
   }
 
   ngOnInit() {
     this.auth.getProfile((err, profile) => {
       this.profile = profile;
-      console.log(profile);
       this.getAllWatched();
     });
   }
