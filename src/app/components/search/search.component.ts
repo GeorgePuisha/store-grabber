@@ -21,6 +21,7 @@ export class SearchComponent implements OnInit {
   pagesLoaded: number = 0;
   showedProducts: Product[] = [];
   isFound: boolean = false;
+  loading: boolean = false;
 
   constructor(public http: HttpClient) { }
 
@@ -29,6 +30,7 @@ export class SearchComponent implements OnInit {
 
   public onKey(event: any) {
     this.query = event.target.value;
+    this.loading = true;
     this.search();
   }
 
@@ -40,16 +42,19 @@ export class SearchComponent implements OnInit {
   }
 
   public getPageAmount() {
+    this.loading = true;
     this.http
       .get(environment.API_URL + "search/" + this.query + "/last")
       .map((data) => JSON.stringify(data))
       .subscribe((data) => {
         this.pagesMax = parseInt(data);
         this.pagesMax > 0 ? this.isFound = true : this.isFound = false;
+        this.loading = false;
       });
   }
 
   public loadPage() {
+    this.loading = true;
     const pageToLoad: number = this.pagesLoaded + 1;
     this.http
       .get(environment.API_URL + "search/" + this.query + "/" + pageToLoad.toString())
@@ -58,6 +63,7 @@ export class SearchComponent implements OnInit {
         const page: Product[] = JSON.parse(data);
         this.pagesLoaded++;
         this.showedProducts = this.showedProducts.concat(page);
+        this.loading = false;
       });
   }
 
