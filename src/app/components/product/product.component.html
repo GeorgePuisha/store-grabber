@@ -1,9 +1,7 @@
 <div class="container-fluid alert">
   <div class="d-flex flex-column">
-    <div class="d-flex justify-content-between gray">
-      <div class="icon icon-status">
-        <span class="badge badge-success">{{ product.status }}</span>
-      </div>
+    <div class="d-flex justify-content-end gray">
+
       <div class="d-flex justify-content-start">
         <div class="icon" *ngIf="!canBeWatched">
           <a routerLink="/profile/watched/{{ product.key }}" role="button" title="Watch price changing" class="text text-primary"><i class="fa fa-line-chart" aria-hidden="true"></i></a>
@@ -14,14 +12,17 @@
         <div class="icon" *ngIf="!canBeWatched">
           <a (click)="unwatch(product)" role="button" title="Stop watching" class="text text-primary"><i class="fa fa-eye-slash" aria-hidden="true"></i></a>
         </div>
+        <div class="icon">
+          <span class="badge badge-success">{{ product.status }}</span>
+        </div>
       </div>
     </div>
     <div class="d-flex justify-content-between">
       <div class="d-flex justify-content-start">
-        <div class="alert img-container">
+        <div class="img-container">
           <a href="{{ product.url }}"><img class="img-responsive img-product" src="{{ product.image }}" alt="Card image cap"></a>
         </div>
-        <div class="alert text text-left">
+        <div class="description-container">
           <a href="{{ product.url }}"><h4>{{ product.name }}</h4></a>
           <p>{{ product.description }}</p>
         </div>
