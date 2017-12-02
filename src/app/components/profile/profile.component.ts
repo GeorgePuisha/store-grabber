@@ -13,6 +13,7 @@ import { Product } from "../product";
 export class ProfileComponent implements OnInit {
 
   profile: any;
+  visible: boolean = false;
   title: string = "Watched goods:"
   showedProducts: Product[] = [];
 
@@ -24,6 +25,7 @@ export class ProfileComponent implements OnInit {
       .map((data) => JSON.stringify(data))
       .subscribe((data) => {
         this.showedProducts = JSON.parse(data);
+        this.visible = true;
       });
   }
 

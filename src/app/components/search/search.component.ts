@@ -15,7 +15,7 @@ import { HttpClient } from "@angular/common/http";
 })
 export class SearchComponent implements OnInit {
 
-  title: string = "Search results:";
+  title: string = "Results:";
   query: string;
   pagesMax: number = 0;
   pagesLoaded: number = 0;
