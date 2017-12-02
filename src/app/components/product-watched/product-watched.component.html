@@ -1,9 +1,9 @@
 <div class="d-flex justify-content-center" *ngIf="auth.isAuthenticated() && visible">
-  <div class="d-flex justify-content-left flex-column product">
+  <div class="d-flex justify-content-start flex-column product">
     <div class="product-title-container jumbotron">
       <h1><a href="{{ product.url }}">{{ product.name }}</a></h1>
     </div>
-    <div class="alert d-flex justify-content-left">
+    <div class="alert d-flex justify-content-start">
       <div class="alert product-img-container">
         <a href="{{ product.url }}"><img class="img-responsive img-product" src="{{ product.image }}" alt="Card image cap"></a>
       </div>

@@ -5,7 +5,7 @@
     </div>
   </div>
   <div class="row text-center">
-    <div class="col-sm-4 col-md-4 col-lg-3 alert" *ngFor="let product of showedProducts">
+    <div class="container-fluid" *ngFor="let product of showedProducts">
       <app-product [product]="product" [canBeWatched]="canBeWatched"></app-product>
     </div>
   </div>

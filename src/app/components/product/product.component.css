@@ -1,13 +1,36 @@
-.fixed-body {
-  height: 17em;
-}
-
 .img-container {
   height: 120px;
+  width: 240px;
+  text-align: center;
+  margin-left: 1em;
+  margin-right: 1em;
 }
 
 .img-product {
   max-width: 100%;
   max-height: 120px;
   width: auto;
+}
+
+.price-container {
+  height: 120px;
+  width: 240px;
+  text-align: center;
+  margin-left: 1em;
+  margin-right: 1em;
+  margin-top: 1em;
+}
+
+.gray {
+  background: rgba(52, 58, 64, 0.05);
+}
+
+.icon {
+  margin-right: 1em;
+  margin-top: 1em;
+  margin-bottom: 1em;
+}
+
+.icon-status {
+  margin-left: calc(1em + 100px);
 }
