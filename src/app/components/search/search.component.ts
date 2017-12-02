@@ -29,9 +29,7 @@ export class SearchComponent implements OnInit {
 
   public onKey(event: any) {
     this.query = event.target.value;
-    if (event.keyCode == 13) {
-      this.search();
-    }
+    this.search();
   }
 
   public search() {
