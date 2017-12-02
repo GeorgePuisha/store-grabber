@@ -8,6 +8,7 @@ import { appRoutes } from "../../app.routing";
 import { HttpClientModule, HttpClient } from "@angular/common/http";
 import { InfiniteScrollModule } from "ngx-infinite-scroll";
 import { NgxChartsModule } from "@swimlane/ngx-charts";
+import { NgHttpLoaderModule } from "ng-http-loader/ng-http-loader.module";
 
 import { SearchComponent } from "./search.component";
 import { ProductComponent } from "../product/product.component";
@@ -34,7 +35,8 @@ describe("SearchComponent", () => {
         HttpClientModule,
         InfiniteScrollModule,
         RouterTestingModule.withRoutes(appRoutes),
-        NgxChartsModule
+        NgxChartsModule,
+        NgHttpLoaderModule
       ],
       providers: [
         { provide: APP_BASE_HREF, useValue: "/" }
