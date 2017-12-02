@@ -31,14 +31,17 @@ export class SearchComponent implements OnInit {
   public onKey(event: any) {
     this.query = event.target.value;
     this.loading = true;
-    this.search();
+    setTimeout(() => this.search(), 500);
   }
 
   public search() {
     this.showedProducts = [];
     this.pagesLoaded = 0;
-    this.getPageAmount();
-    this.loadPage();
+    const regex = new RegExp("[^\s-]")
+    if (this.query && regex.test(this.query)) {
+      this.getPageAmount();
+      this.loadPage();
+    }
   }
 
   public getPageAmount() {
