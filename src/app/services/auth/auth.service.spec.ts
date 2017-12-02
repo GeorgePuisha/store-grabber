@@ -19,6 +19,7 @@ import { ProductWatchedComponent } from "../../components/product-watched/produc
 
 import { NgxChartsModule } from "@swimlane/ngx-charts";
 import { HttpClientModule, HttpClient } from "@angular/common/http";
+import { NgHttpLoaderModule } from "ng-http-loader/ng-http-loader.module";
 
 import { AuthService } from "./auth.service";
 
@@ -46,7 +47,8 @@ describe("AuthService", () => {
         HttpClientModule,
         RouterTestingModule.withRoutes(appRoutes),
         InfiniteScrollModule,
-        NgxChartsModule
+        NgxChartsModule,
+        NgHttpLoaderModule
       ],
       providers: [
         AuthService,
