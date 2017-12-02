@@ -1,31 +1,3 @@
-<!--<div class="card">
-  <div class="alert">
-    <span class="badge badge-success">{{ product.status }}</span>
-  </div>
-  <div class="alert img-container">
-    <a href="{{ product.url }}"><img class="img-responsive img-product" src="{{ product.image }}" alt="Card image cap"></a>
-  </div>
-  <div class="card-body fixed-body">
-    <a href="{{ product.url }}"><h4 class="card-title">{{ product.name }}</h4></a>
-    <p class="card-text">{{ product.description }}</p>
-  </div>
-  <div class="card-footer">
-    <div class="d-flex justify-content-around">
-      <div *ngIf="!canBeWatched">
-        <a routerLink="/profile/watched/{{ product.key }}" role="button" title="Watch price changing"><i class="fa fa-line-chart" aria-hidden="true"></i></a>
-      </div>
-      <div class="container">
-        <h5 class="text text-bold">{{ product.price }} BYN</h5>
-      </div>
-      <div *ngIf="canBeWatched">
-        <a (click)="watch(product)" role="button" title="Add to watched"><i class="fa fa-eye" aria-hidden="true"></i></a>
-      </div>
-      <div *ngIf="!canBeWatched">
-        <a (click)="unwatch(product)" role="button" title="Stop watching"><i class="fa fa-eye-slash" aria-hidden="true"></i></a>
-      </div>
-    </div>
-  </div>
-</div>-->
 <div class="container-fluid alert">
   <div class="d-flex flex-column">
     <div class="d-flex justify-content-between gray">
@@ -34,13 +6,13 @@
       </div>
       <div class="d-flex justify-content-start">
         <div class="icon" *ngIf="!canBeWatched">
-          <a routerLink="/profile/watched/{{ product.key }}" role="button" title="Watch price changing"><i class="fa fa-line-chart" aria-hidden="true"></i></a>
+          <a routerLink="/profile/watched/{{ product.key }}" role="button" title="Watch price changing" class="text text-primary"><i class="fa fa-line-chart" aria-hidden="true"></i></a>
         </div>
         <div class="icon" *ngIf="canBeWatched">
-          <a (click)="watch(product)" role="button" title="Add to watched"><i class="fa fa-eye" aria-hidden="true"></i></a>
+          <a (click)="watch(product)" role="button" title="Add to watched" class="text text-primary"><i class="fa fa-eye" aria-hidden="true"></i></a>
         </div>
         <div class="icon" *ngIf="!canBeWatched">
-          <a (click)="unwatch(product)" role="button" title="Stop watching"><i class="fa fa-eye-slash" aria-hidden="true"></i></a>
+          <a (click)="unwatch(product)" role="button" title="Stop watching" class="text text-primary"><i class="fa fa-eye-slash" aria-hidden="true"></i></a>
         </div>
       </div>
     </div>
