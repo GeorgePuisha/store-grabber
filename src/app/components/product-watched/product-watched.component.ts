@@ -1,5 +1,5 @@
 import { environment } from "../../../environments/environment";
-import * as moment from 'moment';
+import * as moment from "moment";
 
 import { Component, OnInit, ViewEncapsulation } from "@angular/core";
 import { ActivatedRoute } from "@angular/router";

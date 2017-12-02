@@ -15,7 +15,7 @@ import { HttpClient } from "@angular/common/http";
 })
 export class SearchComponent implements OnInit {
 
-  title: string = "Search results:";
+  title: string = "Results:";
   query: string;
   pagesMax: number = 0;
   pagesLoaded: number = 0;
@@ -29,9 +29,7 @@ export class SearchComponent implements OnInit {
 
   public onKey(event: any) {
     this.query = event.target.value;
-    if (event.keyCode == 13) {
-      this.search();
-    }
+    this.search();
   }
 
   public search() {

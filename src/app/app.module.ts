@@ -2,6 +2,7 @@ import { NgModule } from "@angular/core";
 import { BrowserModule } from "@angular/platform-browser";
 import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
 import { HttpClientModule } from "@angular/common/http";
+import { NgHttpLoaderModule } from "ng-http-loader/ng-http-loader.module";
 import { InfiniteScrollModule } from "ngx-infinite-scroll";
 import { NgxChartsModule } from "@swimlane/ngx-charts";
 import "rxjs/Rx";
@@ -37,6 +38,7 @@ import { ProductWatchedComponent } from "./components/product-watched/product-wa
     BrowserModule,
     BrowserAnimationsModule,
     HttpClientModule,
+    NgHttpLoaderModule,
     InfiniteScrollModule,
     NgxChartsModule,
     routing

@@ -8,13 +8,15 @@
 }
 
 .product-img-container {
-  height: 240px;
+  height: 18em;
   margin-left: 4em;
   margin-right: 2em;
 }
 
 .product-description-container {
-  height: 240px;
+  height: 15em;
   margin-left: 4em;
   margin-right: 2em;
 }
+
+.img-product {}

@@ -12,6 +12,7 @@ import { ProductComponent } from "./components/product/product.component";
 import { ProductListComponent } from "./components/product-list/product-list.component";
 
 import { HttpClientModule, HttpClient } from "@angular/common/http";
+import { NgHttpLoaderModule } from "ng-http-loader/ng-http-loader.module";
 
 import { AuthService } from "./services/auth/auth.service";
 
@@ -30,7 +31,8 @@ describe("AppComponent", () => {
       imports: [
         HttpClientModule,
         RouterTestingModule,
-        InfiniteScrollModule
+        InfiniteScrollModule,
+        NgHttpLoaderModule
       ],
       providers: [
         AuthService,
