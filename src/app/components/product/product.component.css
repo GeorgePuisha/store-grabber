@@ -1,6 +1,4 @@
 .img-container {
-  height: auto;
-  width: 18em;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -15,18 +13,18 @@
 }
 
 .description-container {
-  text-align: left;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: left;
   margin-top: 2em;
-  margin-left: 1em;
-  margin-right: 1em;
 }
 
 .price-container {
-  height: 8em;
-  width: 15em;
-  text-align: center;
-  margin-left: 1em;
-  margin-right: 1em;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
   margin-top: 2em;
 }
 
