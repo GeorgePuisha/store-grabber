@@ -57,7 +57,6 @@ export class ProductWatchedComponent implements OnInit {
       series: this.createSeries(product)
     };
     this.priceData.push(data);
-    console.log(this.priceData);
   }
 
   constructor(private route: ActivatedRoute, private http: HttpClient, public auth: AuthService) {

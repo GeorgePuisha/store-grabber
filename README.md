@@ -87,15 +87,17 @@ Some hints:
 * Your project should provide a Procfile. [more](https://devcenter.heroku.com/articles/getting-started-with-nodejs#define-a-procfile);
 * Easy start with Heroku ["Provision a database"](https://devcenter.heroku.com/articles/getting-started-with-nodejs#provision-a-database) article.
 
-
 ## Built With
 
-* [Node.js](https://github.com/nodejs/node) - JavaScript runtime for server;
 * [npm](https://github.com/npm/npm) - Package manager for JavaScript;
-* [Angular 5](https://github.com/angular/angular) - Development platform for client application;
+* [Node.js](https://github.com/nodejs/node) - JavaScript runtime for server;
 * [Express.js](https://github.com/expressjs/express) - Framework for Node.js;
+* [Moment.js](https://github.com/moment/moment/) - JavaScript library for date manipulations;
+* [Angular 5](https://github.com/angular/angular) - Development platform for client application;
+* [ngx-infinite-scroll](https://github.com/orizens/ngx-infinite-scroll) - Infinite scrolling for Angular 5;
+* [ngx-charts](https://github.com/swimlane/ngx-charts) - Charting framework for Angular 5;
+* [Bootstrap 4](https://v4-alpha.getbootstrap.com/) - Responsive web-design framework;
 * [Heroku](https://www.heroku.com/home) - Deployment platform.
-
 
 ## Author
 
