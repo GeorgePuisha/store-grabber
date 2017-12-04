@@ -1,18 +1,47 @@
 <div id="home">
-  <div id="greet" class="d-flex justify-content-center" *ngIf="!auth.isAuthenticated()">
-    <div class="jumbotron">
-      <h1 class="display-3">Hello, stranger</h1>
-      <p class="lead text text-dark">This is a site where you can watch the <a href="https://www.onliner.by/">onliner.com</a> freshest goods.</p>
-      <hr class="my-4">
-      <p>You can add them to favourite list. You just need to log in!</p>
-      <p class="lead">
-        <a class="btn btn-primary btn-margin navbar-right" (click)="auth.login()">
-                Start
+  <div id="greet" class="d-flex flex-column" *ngIf="!auth.isAuthenticated()">
+    <div class="d-flex justify-content-center alert" *ngIf="!auth.isAuthenticated()">
+      <div class="jumbotron col-lg-6 col-md-8 col-sm-12 col-xs-12">
+        <div class="text text-center">
+          <h1 class="display-5">Hello, stranger</h1>
+
+          <p class="lead text text-dark">This is a site where you can watch the <a href="https://www.onliner.by/">onliner.com</a> freshest goods. We help you to stay tuned.</p>
+          <hr class="my-4">
+          <p>Extremely simple, but powerful & fast!</p>
+          <p class="lead">
+            <a class="btn btn-primary btn-margin navbar-right" (click)="auth.login()">
+                Try now
             </a>
-      </p>
+          </p>
+        </div>
+      </div>
+    </div>
+    <div class="container">
+      <div class="text text-center alert">
+        <h1 class="display-5">What to do?</h1>
+      </div>
+      <div class="process">
+        <div class="process-row">
+          <div class="process-step">
+            <button type="button" class="btn btn-default btn-circle" title="You should create an account to continue"><i class="fa fa-user fa-3x"></i></button>
+            <p>Login</p>
+          </div>
+          <div class="process-step">
+            <button type="button" class="btn btn-default btn-circle" title="Search for products from Onliner's catalog"><i class="fa fa-search fa-3x"></i></button>
+            <p>Search</p>
+          </div>
+          <div class="process-step">
+            <button type="button" class="btn btn-default btn-circle" title="Watch price changing & receive notifications"><i class="fa fa-eye fa-3x"></i></button>
+            <p>Watch</p>
+          </div>
+          <div class="process-step">
+            <button type="button" class="btn btn-success btn-circle" title="Purchase product"><i class="fa fa-usd fa-3x"></i></button>
+            <p>Profit</p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div id="search" *ngIf="auth.isAuthenticated()">
+      <app-search></app-search>
     </div>
   </div>
-  <div id="search" *ngIf="auth.isAuthenticated()">
-    <app-search></app-search>
-  </div>
-</div>
