@@ -1,4 +1,8 @@
 .search-container {
+  width: 80%;
+}
+
+.search-box {
   width: 50%;
 }
 
