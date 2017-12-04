@@ -1,5 +1,5 @@
-<div class="d-flex justify-content-start" *ngIf="auth.isAuthenticated() && visible">
-  <div class="jumbotron">
+<div class="d-flex justify-content-start flex-wrap" *ngIf="auth.isAuthenticated() && visible">
+  <div class="jumbotron col-lg-3 col-md-12 col-sm-12 col-xs-12">
     <div class="alert text-center">
       <h2>{{ profile?.nickname }}</h2>
     </div>
@@ -10,6 +10,8 @@
       <h4>{{ profile?.email }}</h4>
     </div>
   </div>
-  <app-product-list class="container-fluid" [showedProducts]="showedProducts" [title]="title" [canBeWatched]=false></app-product-list>
+  <div class="col-lg-9 col-md-12 col-sm-12 col-xs-12">
+    <app-product-list class="container-fluid" [showedProducts]="showedProducts" [title]="title" [canBeWatched]=false></app-product-list>
+  </div>
 </div>
 <spinner backgroundColor="#343A40" spinner="sk-spinner-pulse"></spinner>

@@ -3,16 +3,16 @@
     <div class="product-title-container jumbotron">
       <h1><a href="{{ product.url }}">{{ product.name }}</a></h1>
     </div>
-    <div class="alert d-flex justify-content-start">
-      <div class="alert product-img-container">
+    <div class="alert d-flex justify-content-start flex-wrap">
+      <div class="alert product-img-container col-lg-3 col-md-6 col-sm-12 col-xs-12">
         <a href="{{ product.url }}"><img class="img-responsive img-product" src="{{ product.image }}" alt="Card image cap"></a>
       </div>
-      <div class="alert product-description-container">
-        <div class="alert">
+      <div class="alert product-description-container col-lg-9 col-md-6 col-sm-12 col-xs-12">
+        <div>
           <h4>Description:</h4>
-          <h5>{{ product.description }}</h5>
+          <h6>{{ product.description }}</h6>
         </div>
-        <div class="alert">
+        <div>
           <h4>Last price:</h4>
           <h1 class="text text-success">{{ lastPrice }} {{ currency }}</h1>
         </div>

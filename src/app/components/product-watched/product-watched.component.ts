@@ -23,7 +23,7 @@ export class ProductWatchedComponent implements OnInit {
 
   showXAxis = true;
   showYAxis = true;
-  gradient = false;
+  gradient = true;
   showLegend = false;
   showXAxisLabel = true;
   xAxisLabel = "Day";
@@ -32,20 +32,20 @@ export class ProductWatchedComponent implements OnInit {
   timeline = true;
   autoScale = true;
   colorScheme = {
-    domain: ["#343A40"]
+    domain: ["#4BBF73"]
   };
 
   visible: boolean = false;
 
   public createSeries(product) {
     let series: object[] = [];
-    let date = moment(product.createdAt).format("DD.MM.YYYY");
+    let date = moment(product.createdAt);
     product.price.forEach(price => {
       let point: object = {
         value: parseInt(price),
-        name: date
+        name: date.format("DD.MM.YYYY")
       };
-      date = moment().add(1, "days").format("DD.MM.YYYY");
+      date = moment(date).add(1, "days");
       series.push(point);
     });
     return series;

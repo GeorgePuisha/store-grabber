@@ -1,17 +1,19 @@
 <div class="d-flex justify-content-center">
   <div class="d-flex flex-column search-container">
-    <div class="jumbotron text text-center">
-      <h3>Start your search here</h3>
+    <div class="d-flex flex-row justify-content-center">
+      <div class="jumbotron text text-center col-lg-10 col-md-10 col-sm-12 col-xs-12">
+        <h3>Start your search here</h3>
+      </div>
     </div>
     <div class="d-flex flex-row justify-content-center">
-      <div class="container-fluid">
+      <div class="container-fluid col-lg-8 col-md-10 col-sm-12 col-xs-12">
         <div class="input-group">
           <input (keyup)="onKey($event)" class="form-control" type="search" id="example-search-input">
           <span class="input-group-btn">
-            <button (click)="search()" class="btn btn-primary" id="search">
+            <button role="button" (click)="search()" class="btn btn-primary" id="search">
                 <div class="text text-center go-button">
-                    <h5 *ngIf="!loading" class="text text-secondary">Go</h5>
-                    <h5 *ngIf="loading" class="text text-secondary"><i class="fa fa-spinner fa-pulse fa-spin" aria-hidden="true"></i></h5>
+                    <h5 *ngIf="!loading" class="text text-secondary"><i class="fa fa-search fa-fw" aria-hidden="true"></i></h5>
+                    <h5 *ngIf="loading" class="text text-secondary"><i class="fa fa-spinner fa-pulse fa-spin fa-fw" aria-hidden="true"></i></h5>
                 </div>
             </button>
           </span>

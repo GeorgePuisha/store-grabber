@@ -1,20 +1,21 @@
-<nav class="navbar navbar-expand-lg navbar-dark bg-dark navbar-fixed-top">
-  <div class="container-fluid">
-    <a class="navbar-brand" href="">GRABBER</a>
-    <div class="collapse navbar-collapse">
-      <div class="navbar-nav">
-      </div>
-      <div class="navbar-nav navbar-right ml-auto">
-        <a class="btn btn-secondary btn-margin" *ngIf="auth.isAuthenticated()" href="/profile">
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark navbar-fixed-top navbar-toggleable-md">
+  <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <a class="navbar-brand brand" href="">GRABBER</a>
+
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <div class="navbar-nav navbar-right ml-auto">
+      <a role="button" class="btn btn-secondary btn-margin" *ngIf="auth.isAuthenticated()" href="/profile">
                     My Profile
                 </a>
-        <a class="btn btn-primary btn-margin navbar-right" *ngIf="!auth.isAuthenticated()" (click)="auth.login()">
+      <a role="button" class="btn btn-primary btn-margin navbar-right" *ngIf="!auth.isAuthenticated()" (click)="auth.login()">
                     Log In
                 </a>
-        <a class="btn btn-primary btn-margin navbar-right" id="logout" *ngIf="auth.isAuthenticated()" (click)="auth.logout()">
+      <a role="button" class="btn btn-primary btn-margin navbar-right" id="logout" *ngIf="auth.isAuthenticated()" (click)="auth.logout()">
                     Log Out
                 </a>
-      </div>
     </div>
   </div>
 </nav>

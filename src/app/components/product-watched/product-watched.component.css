@@ -9,14 +9,18 @@
 
 .product-img-container {
   height: 18em;
-  margin-left: 4em;
-  margin-right: 2em;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
 .product-description-container {
-  height: 15em;
-  margin-left: 4em;
-  margin-right: 2em;
+  height: auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: left;
 }
 
 .img-product {}

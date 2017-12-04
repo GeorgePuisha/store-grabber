@@ -1,4 +1,8 @@
 .search-container {
+  width: 80%;
+}
+
+.search-box {
   width: 50%;
 }
 
@@ -8,5 +12,8 @@
 }
 
 .go-button {
-  width: 4em;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
