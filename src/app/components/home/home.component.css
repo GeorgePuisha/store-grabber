@@ -12,11 +12,6 @@
   position: relative;
 }
 
-.process-step button[disabled] {
-  opacity: 1 !important;
-  filter: alpha(opacity=100) !important;
-}
-
 .process-row:before {
   top: 32px;
   bottom: 0;
