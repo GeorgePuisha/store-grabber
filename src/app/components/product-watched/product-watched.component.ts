@@ -32,7 +32,7 @@ export class ProductWatchedComponent implements OnInit {
   timeline = true;
   autoScale = true;
   colorScheme = {
-    domain: ["#343A40"]
+    domain: ["#4BBF73"]
   };
 
   visible: boolean = false;
