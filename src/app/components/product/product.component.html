@@ -20,7 +20,7 @@
     <div class="d-flex justify-content-between flex-wrap">
       <div class="d-flex justify-content-start flex-wrap col-lg-9 col-md-8 col-sm-12 col-xs-12">
         <div class="img-container col-lg-3 col-md-4 col-sm-12 col-xs-12">
-          <a href="{{ product.url }}"><img class="img-responsive img-product" src="{{ product.image }}" alt="Card image cap"></a>
+          <a href="{{ product.url }}"><img class="img-responsive img-product" src="{{ product.image }}" alt="{{ product.name }}" title="{{ product.name }}"></a>
         </div>
         <div class="description-container col-lg-9 col-md-8 col-sm-12 col-xs-12">
           <a href="{{ product.url }}"><h4>{{ product.name }}</h4></a>

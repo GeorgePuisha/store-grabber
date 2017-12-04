@@ -7,13 +7,13 @@
 
   <div class="collapse navbar-collapse" id="navbarSupportedContent">
     <div class="navbar-nav navbar-right ml-auto">
-      <a class="btn btn-secondary btn-margin" *ngIf="auth.isAuthenticated()" href="/profile">
+      <a role="button" class="btn btn-secondary btn-margin" *ngIf="auth.isAuthenticated()" href="/profile">
                     My Profile
                 </a>
-      <a class="btn btn-primary btn-margin navbar-right" *ngIf="!auth.isAuthenticated()" (click)="auth.login()">
+      <a role="button" class="btn btn-primary btn-margin navbar-right" *ngIf="!auth.isAuthenticated()" (click)="auth.login()">
                     Log In
                 </a>
-      <a class="btn btn-primary btn-margin navbar-right" id="logout" *ngIf="auth.isAuthenticated()" (click)="auth.logout()">
+      <a role="button" class="btn btn-primary btn-margin navbar-right" id="logout" *ngIf="auth.isAuthenticated()" (click)="auth.logout()">
                     Log Out
                 </a>
     </div>

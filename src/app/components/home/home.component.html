@@ -1,6 +1,6 @@
 <div id="home">
   <div id="greet" class="d-flex flex-column" *ngIf="!auth.isAuthenticated()">
-    <div class="d-flex justify-content-center alert" *ngIf="!auth.isAuthenticated()">
+    <div class="d-flex justify-content-center alert">
       <div class="jumbotron col-lg-6 col-md-8 col-sm-12 col-xs-12">
         <div class="text text-center">
           <h1 class="display-5">Hello, stranger</h1>
@@ -41,7 +41,7 @@
         </div>
       </div>
     </div>
-    <div id="search" *ngIf="auth.isAuthenticated()">
-      <app-search></app-search>
-    </div>
+  </div>
+  <div id="search" *ngIf="auth.isAuthenticated()">
+    <app-search></app-search>
   </div>
