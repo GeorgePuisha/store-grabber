@@ -14,7 +14,7 @@
         </div>
         <div>
           <h4>Last price:</h4>
-          <h1 class="text text-success">{{ lastPrice }} {{ currency.currentCurrency }}</h1>
+          <h1 class="text text-success">{{ lastPrice | currency: currency.currentRate }} {{ currency.currentCurrency }}</h1>
         </div>
       </div>
     </div>

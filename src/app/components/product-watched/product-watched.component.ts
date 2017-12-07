@@ -77,9 +77,12 @@ export class ProductWatchedComponent implements OnInit {
   }
 
   ngOnInit() {
-    this.auth.getProfile((err, profile) => {
-      this.profile = profile;
-    });
+    if (this.auth.userProfile) {
+      this.profile = this.auth.userProfile;
+    } else {
+      this.auth.getProfile((err, profile) => {
+        this.profile = profile;
+      });
+    }
   }
-
 }

@@ -20,15 +20,21 @@ export class ProductComponent implements OnInit {
   @Input() product: Product;
   @Input() canBeWatched: boolean = true;
 
-  constructor(public http: HttpClient, public auth: AuthService, public currency: CurrencyService) { }
-
-  ngOnInit() {
-    this.profile = this.auth.userProfile;
+  constructor(public http: HttpClient, public auth: AuthService, public currency: CurrencyService) {
+    if (this.auth.userProfile) {
+      this.profile = this.auth.userProfile;
+    } else {
+      this.auth.getProfile((err, profile) => {
+        this.profile = profile;
+      });
+    }
   }
+
+  ngOnInit() { }
 
   public watch(product: Product) {
     this.http
-      .get(environment.API_URL + "watch/" + this.profile.email + "/" + product.key)
+      .get(environment.API_URL + "watch/" + this.auth.userProfile.email + "/" + product.key)
       .map((data) => JSON.stringify(data))
       .subscribe((data) => {
       });
@@ -37,11 +43,10 @@ export class ProductComponent implements OnInit {
 
   public unwatch(product: Product) {
     this.http
-      .get(environment.API_URL + "unwatch/" + this.profile.email + "/" + product.key)
+      .get(environment.API_URL + "unwatch/" + this.auth.userProfile.email + "/" + product.key)
       .map((data) => JSON.stringify(data))
       .subscribe((data) => {
       });
     this.canBeWatched = true;
   }
-
 }

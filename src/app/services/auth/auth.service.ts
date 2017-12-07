@@ -67,11 +67,12 @@ export class AuthService {
     const accessToken = localStorage.getItem("access_token");
     const self = this;
     this.auth0.client.userInfo(accessToken, (err, profile) => {
+      console.log(err);
       if (profile) {
         self.userProfile = profile;
         self.userProfile.email = profile.email || profile.sub;
-        watchProfile(err, profile);
       }
+      watchProfile(err, profile);
     });
   }
 

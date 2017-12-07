@@ -19,9 +19,18 @@ export class ProfileComponent implements OnInit {
   showedProducts: Product[] = [];
 
   constructor(public auth: AuthService, public http: HttpClient, public currency: CurrencyService) {
-    this.auth.getProfile((err, profile) => {
-      this.profile = profile;
-    });
+  }
+
+  ngOnInit() {
+    if (this.auth.userProfile) {
+      this.profile = this.auth.userProfile;
+      this.getAllWatched();
+    } else {
+      this.auth.getProfile((err, profile) => {
+        this.profile = profile;
+        this.getAllWatched();
+      });
+    }
   }
 
   public getAllWatched() {
@@ -32,12 +41,5 @@ export class ProfileComponent implements OnInit {
         this.showedProducts = JSON.parse(data);
         this.visible = true;
       });
-  }
-
-  ngOnInit() {
-    this.auth.getProfile((err, profile) => {
-      this.profile = profile;
-      this.getAllWatched();
-    });
   }
 }
