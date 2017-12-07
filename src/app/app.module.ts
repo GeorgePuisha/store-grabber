@@ -18,6 +18,7 @@ import { ProfileComponent } from "./components/profile/profile.component";
 import { SearchComponent } from "./components/search/search.component";
 
 import { AuthService } from "./services/auth/auth.service";
+import { CurrencyService } from "./services/currency/currency.service";
 import { ProductComponent } from "./components/product/product.component";
 import { ProductListComponent } from "./components/product-list/product-list.component";
 import { ProductWatchedComponent } from "./components/product-watched/product-watched.component";
@@ -43,7 +44,7 @@ import { ProductWatchedComponent } from "./components/product-watched/product-wa
     NgxChartsModule,
     routing
   ],
-  providers: [AuthService, appRoutingProviders],
+  providers: [AuthService, CurrencyService, appRoutingProviders],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

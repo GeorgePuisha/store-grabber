@@ -6,6 +6,7 @@ import { ActivatedRoute } from "@angular/router";
 import { HttpClient } from "@angular/common/http";
 
 import { AuthService } from "../../services/auth/auth.service";
+import { CurrencyService } from "../../services/currency/currency.service";
 
 @Component({
   selector: "app-product-watched",
@@ -18,7 +19,6 @@ export class ProductWatchedComponent implements OnInit {
   profile: any;
   product: any = {};
   lastPrice: string;
-  currency: string = "BYN";
   priceData: any = [];
 
   showXAxis = true;
@@ -59,7 +59,7 @@ export class ProductWatchedComponent implements OnInit {
     this.priceData.push(data);
   }
 
-  constructor(private route: ActivatedRoute, private http: HttpClient, public auth: AuthService) {
+  constructor(private route: ActivatedRoute, private http: HttpClient, public auth: AuthService, public currency: CurrencyService) {
     this.auth.getProfile((err, profile) => {
       this.profile = profile;
       this.route.params.subscribe(params => {
@@ -77,6 +77,9 @@ export class ProductWatchedComponent implements OnInit {
   }
 
   ngOnInit() {
+    this.auth.getProfile((err, profile) => {
+      this.profile = profile;
+    });
   }
 
 }

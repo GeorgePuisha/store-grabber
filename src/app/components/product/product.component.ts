@@ -6,6 +6,7 @@ import { Product } from "../product";
 import { HttpClient } from "@angular/common/http";
 
 import { AuthService } from "../../services/auth/auth.service";
+import { CurrencyService } from "../../services/currency/currency.service";
 
 @Component({
   selector: "app-product",
@@ -19,7 +20,7 @@ export class ProductComponent implements OnInit {
   @Input() product: Product;
   @Input() canBeWatched: boolean = true;
 
-  constructor(public http: HttpClient, public auth: AuthService) { }
+  constructor(public http: HttpClient, public auth: AuthService, public currency: CurrencyService) { }
 
   ngOnInit() {
     if (this.auth.userProfile) {
