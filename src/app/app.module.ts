@@ -22,6 +22,7 @@ import { CurrencyService } from "./services/currency/currency.service";
 import { ProductComponent } from "./components/product/product.component";
 import { ProductListComponent } from "./components/product-list/product-list.component";
 import { ProductWatchedComponent } from "./components/product-watched/product-watched.component";
+import { CurrencyPipe } from './pipes/currency.pipe';
 
 @NgModule({
   declarations: [
@@ -33,7 +34,8 @@ import { ProductWatchedComponent } from "./components/product-watched/product-wa
     SearchComponent,
     ProductComponent,
     ProductListComponent,
-    ProductWatchedComponent
+    ProductWatchedComponent,
+    CurrencyPipe
   ],
   imports: [
     BrowserModule,

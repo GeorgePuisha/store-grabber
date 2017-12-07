@@ -29,7 +29,7 @@
       </div>
       <div class="price-container col-lg-2 col-md-3 col-sm-12 col-xs-12">
         <div class="container">
-          <h5 class="text text-bold">{{ product.price }} {{ currency.current }}</h5>
+          <h5 class="text text-bold">{{ product.price | currency: currency.current }} {{ currency.current }}</h5>
         </div>
       </div>
     </div>
