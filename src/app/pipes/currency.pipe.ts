@@ -5,16 +5,16 @@ import { Pipe, PipeTransform } from '@angular/core';
 })
 export class CurrencyPipe implements PipeTransform {
 
-  transform(value: string, args: string): string {
-    switch (args) {
+  transform(value: string, type: string, rate: number): string {
+    switch (type) {
       case "BYN": {
         return value;
       }
       case "USD": {
-        return (parseFloat(value) / 2.02).toFixed(2).toString();
+        return (parseFloat(value) / rate).toFixed(2).toString();
       }
       case "EUR": {
-        return (parseFloat(value) / 2.4).toFixed(2).toString();
+        return (parseFloat(value) / rate).toFixed(2).toString();
       }
       default: {
         return value;

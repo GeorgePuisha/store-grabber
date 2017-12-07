@@ -18,7 +18,11 @@ export class ProfileComponent implements OnInit {
   title: string = "Watched goods:"
   showedProducts: Product[] = [];
 
-  constructor(public auth: AuthService, public http: HttpClient, public currency: CurrencyService) { }
+  constructor(public auth: AuthService, public http: HttpClient, public currency: CurrencyService) {
+    this.auth.getProfile((err, profile) => {
+      this.profile = profile;
+    });
+  }
 
   public getAllWatched() {
     this.http

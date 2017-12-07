@@ -23,13 +23,7 @@ export class ProductComponent implements OnInit {
   constructor(public http: HttpClient, public auth: AuthService, public currency: CurrencyService) { }
 
   ngOnInit() {
-    if (this.auth.userProfile) {
-      this.profile = this.auth.userProfile;
-    } else {
-      this.profile = this.auth.getProfile((err, profile) => {
-        this.profile = profile;
-      });
-    }
+    this.profile = this.auth.userProfile;
   }
 
   public watch(product: Product) {
