@@ -23,7 +23,7 @@ export class CurrencyService {
   public setExchangeRate(currency: string): void {
     if (currency !== "BYN") {
       this.http
-        .get("http://www.nbrb.by/API/ExRates/Rates/" + currency + "?ParamMode=2")
+        .get("https://www.nbrb.by/API/ExRates/Rates/" + currency + "?ParamMode=2")
         .map((data) => JSON.stringify(data))
         .subscribe((data) => {
           const resp: any = JSON.parse(data);
