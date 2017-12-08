@@ -1,6 +1,7 @@
 import { environment } from "../../../environments/environment";
 import { Injectable } from "@angular/core";
 import { HttpClient } from "@angular/common/http";
+import { AuthService } from "../auth/auth.service";
 
 @Injectable()
 export class CurrencyService {
@@ -8,18 +9,18 @@ export class CurrencyService {
   public currentCurrency: string = "";
   public currentRate: number = 1;
 
-  constructor(private http: HttpClient) {
+  constructor(private http: HttpClient, public auth: AuthService) {
     this.currentCurrency = localStorage.getItem("currency") || "BYN";
     this.currentRate = parseInt(localStorage.getItem("rate")) || 1;
   }
 
   public saveCurrentCurrencyAndRate() {
     this.http
-      .put(environment.API_URL + "currency/", { currency: this.currentCurrency, rate: this.currentRate })
+      .put(environment.API_URL + "currency/", { email: this.auth.userProfile.email, currency: this.currentCurrency, rate: this.currentRate })
       .subscribe();
   }
 
-  public getExchangeRate(currency: string): void {
+  public setExchangeRate(currency: string): void {
     this.currentRate = 1;
     if (currency !== "BYN") {
       this.http
@@ -35,10 +36,9 @@ export class CurrencyService {
 
   public setCurrent(currency: string): void {
     this.currentCurrency = currency;
-    this.getExchangeRate(this.currentCurrency);
+    this.setExchangeRate(this.currentCurrency);
 
     localStorage.setItem("currency", this.currentCurrency);
     localStorage.setItem("rate", this.currentRate.toString());
   }
-
 }

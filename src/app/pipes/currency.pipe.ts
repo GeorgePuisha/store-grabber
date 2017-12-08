@@ -8,5 +8,4 @@ export class CurrencyPipe implements PipeTransform {
   transform(value: string, rate: number): string {
     return (parseFloat(value) / rate).toFixed(2).toString();
   }
-
 }
