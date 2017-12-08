@@ -1,6 +1,14 @@
 import { TestBed, async, inject } from "@angular/core/testing";
 
 import { CurrencyService } from "./currency.service";
+import { AuthService } from "../auth/auth.service";
+
+import { APP_BASE_HREF } from "@angular/common";
+import { Router } from "@angular/router";
+import { RouterTestingModule } from "@angular/router/testing";
+import { appRoutes } from "../../app.routing";
+
+import { AppModule } from "../../app.module";
 
 import { HttpClientModule, HttpClient } from "@angular/common/http";
 import { HttpClientTestingModule, HttpTestingController } from "@angular/common/http/testing";
@@ -9,11 +17,14 @@ describe("CurrencyService", () => {
   beforeEach(() => {
     TestBed.configureTestingModule({
       providers: [
-        CurrencyService
+        CurrencyService,
+        AuthService
       ],
       imports: [
+        AppModule,
         HttpClientTestingModule,
         HttpClientModule,
+        RouterTestingModule.withRoutes(appRoutes),
       ],
     });
   });
