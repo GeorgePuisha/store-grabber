@@ -1,3 +1,4 @@
+import { environment } from "../../../environments/environment";
 import { Injectable } from "@angular/core";
 import { HttpClient } from "@angular/common/http";
 
@@ -12,7 +13,14 @@ export class CurrencyService {
     this.currentRate = parseInt(localStorage.getItem("rate")) || 1;
   }
 
+  public saveCurrentCurrencyAndRate() {
+    this.http
+      .put(environment.API_URL + "currency/", { currency: this.currentCurrency, rate: this.currentRate })
+      .subscribe();
+  }
+
   public getExchangeRate(currency: string): void {
+    this.currentRate = 1;
     if (currency !== "BYN") {
       this.http
         .get("http://www.nbrb.by/API/ExRates/Rates/" + currency + "?ParamMode=2")
@@ -20,9 +28,8 @@ export class CurrencyService {
         .subscribe((data) => {
           const resp: any = JSON.parse(data);
           this.currentRate = resp.Cur_OfficialRate;
+          this.saveCurrentCurrencyAndRate();
         });
-    } else {
-      this.currentRate = 1;
     }
   }
 
