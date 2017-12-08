@@ -21,7 +21,6 @@ export class CurrencyService {
   }
 
   public setExchangeRate(currency: string): void {
-    this.currentRate = 1;
     if (currency !== "BYN") {
       this.http
         .get("http://www.nbrb.by/API/ExRates/Rates/" + currency + "?ParamMode=2")
@@ -31,6 +30,9 @@ export class CurrencyService {
           this.currentRate = resp.Cur_OfficialRate;
           this.saveCurrentCurrencyAndRate();
         });
+    } else {
+      this.currentRate = 1;
+      this.saveCurrentCurrencyAndRate();
     }
   }
 
