@@ -9,6 +9,18 @@
     <div class="alert text-center">
       <p>{{ profile?.email }}</p>
     </div>
+    <div class="d-flex justify-content-center">
+      <div class="dropdown">
+        <button class="btn btn-outline-primary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+        {{ currency.currentCurrency }}
+      </button>
+        <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+          <a role="button" class="dropdown-item" (click)="currency.setCurrent('BYN')">BYN</a>
+          <a role="button" class="dropdown-item" (click)="currency.setCurrent('USD')">USD</a>
+          <a role="button" class="dropdown-item" (click)="currency.setCurrent('EUR')">EUR</a>
+        </div>
+      </div>
+    </div>
   </div>
   <div class="col-lg-9 col-md-12 col-sm-12 col-xs-12">
     <app-product-list class="container-fluid" [showedProducts]="showedProducts" [title]="title" [canBeWatched]=false></app-product-list>
