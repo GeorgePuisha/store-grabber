@@ -3,13 +3,13 @@
     <div class="d-flex justify-content-end gray">
       <div class="d-flex justify-content-start">
         <div class="icon" *ngIf="!canBeWatched">
-          <a routerLink="/profile/watched/{{ product.key }}" role="button" title="Watch price changing" class="text text-primary"><i class="fa fa-line-chart" aria-hidden="true"></i></a>
+          <a routerLink="/profile/watched/{{ product.key }}" role="button" title="Watch price changing" class="text text-primary"><i class="fas fa-chart-line" aria-hidden="true"></i></a>
         </div>
         <div class="icon" *ngIf="canBeWatched">
-          <a (click)="watch(product)" role="button" title="Add to watched" class="text text-primary"><i class="fa fa-eye" aria-hidden="true"></i></a>
+          <a (click)="watch(product)" role="button" title="Add to watched" class="text text-primary"><i class="fas fa-eye" aria-hidden="true"></i></a>
         </div>
         <div class="icon" *ngIf="!canBeWatched">
-          <a (click)="unwatch(product)" role="button" title="Stop watching" class="text text-primary"><i class="fa fa-eye-slash" aria-hidden="true"></i></a>
+          <a (click)="unwatch(product)" role="button" title="Stop watching" class="text text-primary"><i class="fas fa-eye-slash" aria-hidden="true"></i></a>
         </div>
         <div class="icon">
           <span class="badge badge-success">{{ product.status }}</span>
