@@ -7,5 +7,6 @@ export const environment = {
   production: false,
   URL: "http://localhost:4200/",
   API_URL: "/api/",
+  WEBSOCKET_URL: "http://localhost:3001",
   CLIENT_ID: "BAEUD0UBR83uSbxpNJhHuLuGRjg2KEC5"
 };

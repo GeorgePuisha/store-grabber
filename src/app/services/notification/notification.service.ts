@@ -9,13 +9,11 @@ import * as io from "socket.io-client";
 @Injectable()
 export class NotificationService {
 
-  public url = "http://localhost:3001";
-
   public socket: any;
 
   public GetInstanceStatus(): Observable<any> {
     let observable = new Observable(observer => {
-      this.socket = io(this.url);
+      this.socket = io(environment.WEBSOCKET_URL);
       this.socket.on("message", (data) => {
         data = JSON.parse(data);
         observer.next(data);
