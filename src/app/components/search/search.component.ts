@@ -73,19 +73,18 @@ export class SearchComponent implements OnInit {
         this.showedProducts = this.showedProducts.concat(page);
         this.loading = false;
       });
-    this.recommendedProducts.length > 0 ? this.hasRecommendations = true : this.hasRecommendations = false;
   }
 
   public handleRecommended(response) {
+    this.recommendedProducts = [];
     response.forEach((product) => {
       const recommended: Product = product._source;
       this.recommendedProducts = this.recommendedProducts.concat(recommended);
     });
-    this.pagesMax > 0 ? this.isFound = true : this.isFound = false;
+    this.recommendedProducts.length > 0 ? this.hasRecommendations = true : this.hasRecommendations = false;
   }
 
   public getRecommended() {
-    this.recommendedProducts = [];
     this.loading = true;
     this.http
       .get(environment.API_URL + "recommended/" + this.query)
