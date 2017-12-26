@@ -15,11 +15,15 @@ import { HttpClient } from "@angular/common/http";
 })
 export class SearchComponent implements OnInit {
 
-  title: string = "Results:";
+  titleRecommended: string = "Watched by other users:";
+  titleShowed: string = "Results:";
   query: string;
   pagesMax: number = 0;
   pagesLoaded: number = 0;
+  recommendedProducts: Product[] = [];
   showedProducts: Product[] = [];
+
+  hasRecommendations: boolean = false;
   isFound: boolean = false;
   loading: boolean = false;
 
@@ -40,6 +44,7 @@ export class SearchComponent implements OnInit {
     const regex = new RegExp("[^\s-]")
     if (this.query && regex.test(this.query)) {
       this.getPageAmount();
+      this.getRecommended();
       this.loadPage();
     }
   }
@@ -66,6 +71,28 @@ export class SearchComponent implements OnInit {
         const page: Product[] = JSON.parse(data);
         this.pagesLoaded++;
         this.showedProducts = this.showedProducts.concat(page);
+        this.loading = false;
+      });
+    this.recommendedProducts.length > 0 ? this.hasRecommendations = true : this.hasRecommendations = false;
+  }
+
+  public handleRecommended(response) {
+    response.forEach((product) => {
+      const recommended: Product = product._source;
+      this.recommendedProducts = this.recommendedProducts.concat(recommended);
+    });
+    this.pagesMax > 0 ? this.isFound = true : this.isFound = false;
+  }
+
+  public getRecommended() {
+    this.recommendedProducts = [];
+    this.loading = true;
+    this.http
+      .get(environment.API_URL + "recommended/" + this.query)
+      .map((data) => JSON.stringify(data))
+      .subscribe((data) => {
+        this.handleRecommended(JSON.parse(data));
+
         this.loading = false;
       });
   }
