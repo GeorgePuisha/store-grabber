@@ -19,15 +19,10 @@ import { SearchComponent } from "./components/search/search.component";
 
 import { AuthService } from "./services/auth/auth.service";
 import { CurrencyService } from "./services/currency/currency.service";
-import { NotificationService } from "./services/notification/notification.service";
-
 import { ProductComponent } from "./components/product/product.component";
 import { ProductListComponent } from "./components/product-list/product-list.component";
 import { ProductWatchedComponent } from "./components/product-watched/product-watched.component";
-import { CurrencyPipe } from "./pipes/currency.pipe";
-import { ToastModule } from "ng2-toastr/ng2-toastr";
-import { ToastOptions } from "ng2-toastr";
-import { CustomOption } from "./toastr-options";
+import { CurrencyPipe } from './pipes/currency.pipe';
 
 @NgModule({
   declarations: [
@@ -49,16 +44,9 @@ import { CustomOption } from "./toastr-options";
     NgHttpLoaderModule,
     InfiniteScrollModule,
     NgxChartsModule,
-    ToastModule.forRoot(),
     routing
   ],
-  providers: [
-    AuthService,
-    CurrencyService,
-    NotificationService,
-    appRoutingProviders,
-    { provide: ToastOptions, useClass: CustomOption }
-  ],
+  providers: [AuthService, CurrencyService, appRoutingProviders],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

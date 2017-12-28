@@ -15,11 +15,6 @@ import { HttpClientModule, HttpClient } from "@angular/common/http";
 import { NgHttpLoaderModule } from "ng-http-loader/ng-http-loader.module";
 
 import { AuthService } from "./services/auth/auth.service";
-import { NotificationService } from "./services/notification/notification.service";
-
-import { ToastModule } from "ng2-toastr/ng2-toastr";
-import { ToastOptions } from "ng2-toastr";
-import { CustomOption } from "./toastr-options";
 
 describe("AppComponent", () => {
   beforeEach(async(() => {
@@ -37,40 +32,37 @@ describe("AppComponent", () => {
         HttpClientModule,
         RouterTestingModule,
         InfiniteScrollModule,
-        NgHttpLoaderModule,
-        ToastModule.forRoot()
+        NgHttpLoaderModule
       ],
       providers: [
         AuthService,
-        NotificationService,
-        { provide: ToastOptions, useClass: CustomOption },
       ]
     }).compileComponents();
   }));
-  it("should create the application", () => {
+  it("should create the application", async(() => {
     const fixture = TestBed.createComponent(AppComponent);
     const app = fixture.debugElement.componentInstance;
     expect(app).toBeTruthy();
-  });
+  }));
 
-  it("should contain <main> tag", () => {
+  it("should contain <main> tag", async(() => {
     const fixture = TestBed.createComponent(AppComponent);
     fixture.detectChanges();
     const compiled = fixture.debugElement.nativeElement;
     expect(compiled.querySelector("main")).toBeTruthy();
-  });
+  }));
 
-  it("should contain footer", () => {
+  it("should contain footer", async(() => {
     const fixture = TestBed.createComponent(AppComponent);
     fixture.detectChanges();
     const compiled = fixture.debugElement.nativeElement;
     expect(compiled.querySelector("app-footer")).toBeTruthy();
-  });
+  }));
 
-  it("should contain header with navbar", () => {
+  it("should contain header with navbar", async(() => {
     const fixture = TestBed.createComponent(AppComponent);
     fixture.detectChanges();
     const compiled = fixture.debugElement.nativeElement;
     expect(compiled.querySelector("app-navbar")).toBeTruthy();
-  });
+  }));
 });

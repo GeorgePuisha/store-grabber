@@ -22,11 +22,6 @@ import { HttpClientModule, HttpClient } from "@angular/common/http";
 import { NgHttpLoaderModule } from "ng-http-loader/ng-http-loader.module";
 
 import { AuthService } from "./auth.service";
-import { NotificationService } from "../notification/notification.service";
-
-import { ToastModule } from "ng2-toastr/ng2-toastr";
-import { ToastOptions } from "ng2-toastr";
-import { CustomOption } from "../../toastr-options";
 
 describe("AuthService", () => {
 
@@ -53,13 +48,10 @@ describe("AuthService", () => {
         RouterTestingModule.withRoutes(appRoutes),
         InfiniteScrollModule,
         NgxChartsModule,
-        NgHttpLoaderModule,
-        ToastModule.forRoot(),
+        NgHttpLoaderModule
       ],
       providers: [
         AuthService,
-        NotificationService,
-        { provide: ToastOptions, useClass: CustomOption },
         { provide: APP_BASE_HREF, useValue: "/" }
       ]
     });
